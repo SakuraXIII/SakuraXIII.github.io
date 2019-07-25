@@ -174,7 +174,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: url("https://s0.xinger.ink/acgimg/acgurl.php") no-repeat top right fixed;
+  background: background;
 }
 .mobile-nav-on #wrap {
   left: 280px;
