@@ -27,7 +27,7 @@ $(function () {
         })
 
     //控制台输出一张图片
-    console.log("%c ", "background:url(http://119.23.220.30/wp-content/uploads/2019/07/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
+    console.log("%c ", "background:url(/images/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
     
 })
 
