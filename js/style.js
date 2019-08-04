@@ -26,6 +26,20 @@ $(function () {
             console.error(err);
         })
 
+    //显示时间
+    setInterval(() => {
+        var times = new Date();
+        var h = times.getHours();
+        var m = times.getMinutes();
+        var s = times.getSeconds();
+        h = h >= 10 ? h : "0" + h;
+        m = m >= 10 ? m : "0" + m;
+        s = s >= 10 ? s : "0" + s;
+        $('#times').html(h + " : " + m + " : " + s).css('font-size', '18px');
+
+    }, 500);
+
+
     //控制台输出一张图片
     console.log("%c ", "background:url(https://sakuraxiii.github.io/images/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
 
