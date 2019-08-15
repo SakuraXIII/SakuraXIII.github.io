@@ -343,6 +343,7 @@ body {
 }
 .article-header {
   padding: 20px 20px 0;
+  text-align: center;
 }
 .article-title {
   text-decoration: none;
