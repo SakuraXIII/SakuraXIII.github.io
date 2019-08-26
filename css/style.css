@@ -126,6 +126,7 @@ body {
   background: #eee;
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 .outer {
   max-width: 1220px;
