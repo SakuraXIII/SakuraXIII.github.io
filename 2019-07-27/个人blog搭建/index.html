@@ -137,14 +137,14 @@
 <p>所以，这篇文章将会是属于Hexo的教程。</p>
 <hr>
 <h2 id="创建Github-Pages"><a href="#创建Github-Pages" class="headerlink" title="创建Github Pages"></a>创建Github Pages</h2><p>在一切的开始之前，需要拥有两样东西：<a href="http://nodejs.cn/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>。</p>
-<p>前期准备工作完毕后就可以正式开始了，首先肯定是要有一个GitHub的账户的，登陆个人账户后，创建一个新的repository，存储库的名称需要符合特定的规范：<strong>[username].github.io</strong> ，username即为自己的GitHub用户名，这样可以保证每个人的博客域名不会出现冲突。命名完成后，初始化一下README.md就可以创建啦。<img src="/.io//github_pages.png" alt="GitHub Pages的创建"></p>
+<p>前期准备工作完毕后就可以正式开始了，首先肯定是要有一个GitHub的账户的，登陆个人账户后，创建一个新的repository，存储库的名称需要符合特定的规范：<strong>[username].github.io</strong> ，username即为自己的GitHub用户名，这样可以保证每个人的博客域名不会出现冲突。命名完成后，初始化一下README.md就可以创建啦。<img src="/images/post/%E4%B8%AA%E4%BA%BAblog%E6%90%AD%E5%BB%BA/github_pages.png" alt="GitHub Pages的创建"></p>
 <p>创建完成以后，随便写一个demo，测试一下是否可以用仓库名访问到内容。如果没有问题，就可以开始下一步了。</p>
-<h2 id="搭建Hexo环境"><a href="#搭建Hexo环境" class="headerlink" title="搭建Hexo环境"></a>搭建Hexo环境</h2><h3 id="下载相关文件"><a href="#下载相关文件" class="headerlink" title="下载相关文件"></a>下载相关文件</h3><p>进入<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>的官网<img src="/.io//hexo.png" alt="hexo"></p>
+<h2 id="搭建Hexo环境"><a href="#搭建Hexo环境" class="headerlink" title="搭建Hexo环境"></a>搭建Hexo环境</h2><h3 id="下载相关文件"><a href="#下载相关文件" class="headerlink" title="下载相关文件"></a>下载相关文件</h3><p>进入<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>的官网<img src="/images/post/%E4%B8%AA%E4%BA%BAblog%E6%90%AD%E5%BB%BA/hexo.png" alt="hexo"></p>
 <p>按照首页显示的命令行，在命令行中依次执行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo-cli  //下载hexo-cli工具</span><br><span class="line"><span class="meta">$</span> hexo init [new file_name] //在指定文件夹下初始化hexo</span><br><span class="line"><span class="meta">$</span> cd new file_name //进入新的文件夹</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
 
 <p>所有文件下载完成之后，可以在指定文件夹下看到以下文件</p>
-<p><img src="/.io//file-list.png" alt="文件列表"></p>
+<p><img src="/images/post/%E4%B8%AA%E4%BA%BAblog%E6%90%AD%E5%BB%BA/file-list.png" alt="文件列表"></p>
 <ul>
 <li>node_modules 存放着相关的依赖包</li>
 <li>scaffolds  模板文件，用来在自己编写的新文章中添加一些默认内容</li>
@@ -227,7 +227,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-随笔/">日记 随笔</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-随笔/">日记 随笔</a></li></ul>
     </div>
   </div>
 
@@ -248,6 +248,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019-08-31/我的第一个项目经历/">关于我的第一个项目的经历</a>
+          </li>
         
           <li>
             <a href="/2019-08-08/博客更新日志/">博客更新日志</a>
