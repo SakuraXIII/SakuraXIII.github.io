@@ -99,40 +99,93 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019-07-27/个人blog搭建/" class="archive-article-date">
-  <time datetime="2019-07-27T08:54:23.000Z" itemprop="datePublished">7月 27</time>
+        <section id="main"><article id="post-java初学（一）" class="article article-type-post" itemscope
+  itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019-09-13/java初学（一）/" class="article-date">
+  <time datetime="2019-09-13T12:31:09.000Z" itemprop="datePublished">2019-09-13</time>
 </a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
       
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019-07-27/个人blog搭建/">个人blog搭建</a>
+    <h1 class="article-title" itemprop="name">
+      java初学（一）
     </h1>
   
 
     </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h4 id="数据类型（四类八种）"><a href="#数据类型（四类八种）" class="headerlink" title="数据类型（四类八种）"></a>数据类型（四类八种）</h4><ul>
+<li><strong>整形</strong><ul>
+<li>byte</li>
+<li>short</li>
+<li>int</li>
+<li>long</li>
+</ul>
+</li>
+<li><strong>浮点型</strong><ul>
+<li>double</li>
+<li>float</li>
+</ul>
+</li>
+<li><strong>字符型</strong><ul>
+<li>char</li>
+</ul>
+</li>
+<li><strong>布尔型</strong><ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<h4 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h4><p>byte , short , char –&gt; int –&gt; long –&gt; float –&gt; double  级别由低到高</p>
+<p>由低到高自动转换，由高到低强制转换（因为不同数据类型所占字节位数不同，高位数可以容纳低位数，反之则不行）</p>
+<p>同一个表达式中，若存在多种类型，则会被转换为级别最高的类型进行运算</p>
+<p>布尔类型不能参与运算</p>
+<p>对于 byte , short , char 几种类型，有特例，可以直接对这三种类型进行整型赋值 (int) ，但不能超过它们的表数范围，即：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> a = <span class="number">128</span> <span class="comment">//true</span></span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">129</span>  <span class="comment">//false  //byte 表数范围为 -128~127</span></span><br><span class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>) <span class="number">129</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="关于-break-continue-return-的区别"><a href="#关于-break-continue-return-的区别" class="headerlink" title="关于 break , continue , return 的区别"></a>关于 break , continue , return 的区别</h4><ul>
+<li><strong>break</strong>：跳出当前循环（语句所在循环体）</li>
+<li><strong>continue</strong>：结束本次循环，进入下次循环（同上）</li>
+<li><strong>return</strong>：跳出语句所在的方法体，结束执行方法</li>
+</ul>
+<p>可通过添加 <code>标签</code> 使 break , continue 跳出指定位置的循环体：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[标签标记]:循环体&#123;</span><br><span class="line">    循环体&#123;</span><br><span class="line">    	<span class="keyword">break</span>/<span class="keyword">continue</span> [标签标记];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019-08-31/我的第一个项目经历/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于我的第一个项目的经历</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
