@@ -36,8 +36,8 @@ $(function () {
         m = m >= 10 ? m : "0" + m;
         s = s >= 10 ? s : "0" + s;
         $('#times').html(h + " : " + m + " : " + s).css('font-size', '18px');
-
     }, 500);
+
 
 
     //控制台输出一张图片
