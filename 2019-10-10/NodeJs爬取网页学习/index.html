@@ -99,11 +99,11 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-博客搭建初步完成啦" class="article article-type-post" itemscope
+        <section id="main"><article id="post-NodeJs爬取网页学习" class="article article-type-post" itemscope
   itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019-08-03/博客搭建初步完成啦/" class="article-date">
-  <time datetime="2019-08-03T09:04:47.000Z" itemprop="datePublished">2019-08-03</time>
+    <a href="/2019-10-10/NodeJs爬取网页学习/" class="article-date">
+  <time datetime="2019-10-10T10:00:00.000Z" itemprop="datePublished">2019-10-10</time>
 </a>
     
   </div>
@@ -114,7 +114,7 @@
       
   
     <h1 class="article-title" itemprop="name">
-      博客搭建初步完成啦
+      NodeJs爬取网页学习
     </h1>
   
 
@@ -124,14 +124,44 @@
       
       
       
-      <h2 id="博客v1-0版本完成啦"><a href="#博客v1-0版本完成啦" class="headerlink" title="博客v1.0版本完成啦"></a>博客v1.0版本完成啦</h2><p>停了一个星期没有摆弄摆弄博客，一直在忙着项目的设计，今天难得把项目任务基本完成了，闲下来，就打算把博客继续弄好。</p>
-<p>本来是打算自己来重新写一个主题样式的，但是无奈刚接触不久，需要使用到的<code>ejs</code> 、<code>stylus</code> 语法还不太熟悉，页面搭建起来比较困难QAQ。所以，最后决定把默认样式拷贝一份，基于默认样式的基础上把之前自己写好的一部分内容融合进去。</p>
-<p>在经过一番修改后，最终就变成了现在的这个样子，但是发现文章中引入的图片的路径始终有问题，百度了很久，插件也装了，始终加载不出来，所以在解决这个问题之前，前面的教程里的图片就没办法看到了【心塞(´-ωก`)】。</p>
-<p>之前和朋友提过Github Pages，朋友说网速超级慢，后面在用默认主题时也没有遇到明显的加载缓慢问题，然而今天将页面部署到Github上后，进入博客才发现真的。。。超级慢。。。。（这谁顶得住！！）。于是决定将这个博客另外部署到<a href="https://gitee.com/Tonyteachers/Tonyteachers" target="_blank" rel="noopener">码云</a>上，又经过一番折腾后，终于算是正式完成了v1.0版本的博客。</p>
-<p>这是我的博客的域名：</p>
-<p>走国外GIthub路线：<a href="https://sakuraxiii.github.io" target="_blank" rel="noopener">SakuraXIII</a></p>
-<p>走国内码云路线：<a href="https://tonyteachers.gitee.io">Tonyteachers</a></p>
-<p>接下来又要继续实验室的项目了，估计也没多少时间给博客美化美化咯</p>
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近对NodeJs突然感兴趣，这门前端人士必须了解的后台语言怎么能够不掌握呢。抱着复习一下之前学习的一点内容，靠着面向百度编程的能力，尝试着发送AJAX请求自己写的Json数据，没想到还真弄出来了。然后就想到了爬虫，这个名词听了很多次，一直不太明白究竟是怎么爬取数据的，然后这次就打算用NodeJs来试着写一下。</p>
+<a id="more"></a>
+
+<p>先是在网上冲浪看了一些大佬们写的相关的小案例，了解了一下基本的原理。个人的理解是：<code>通过使用NodeJs创建服务器，访问目标网站，目标服务器将网页数据发送回来，从而将获取到的数据进行处理</code>。在某位大佬的<a href="https://www.cnblogs.com/rlann/p/7102587.html" target="_blank" rel="noopener">博客</a>中拷贝了一份案例后，开始了解其中实现数据爬取的逻辑方法。</p>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>以该案例获取图片为例：</p>
+<ul>
+<li><p>引入相关包</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>)  <span class="comment">//http模块</span></span><br><span class="line"><span class="keyword">let</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>)  <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">let</span> cheerio=<span class="built_in">require</span>(<span class="string">'cheerio'</span>) <span class="comment">//服务器端的jQuery</span></span><br><span class="line"><span class="keyword">let</span> request=<span class="built_in">require</span>(<span class="string">'request'</span>) <span class="comment">//用于发送请求等操作</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>通过对目标网站进行GET请求，获取网站响应的数据</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http.get(url,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//网页数据较大，多次传输 res.on('data',callback)</span></span><br><span class="line">    <span class="comment">//对获取到的数据进行拼接，得到完整数据 html+=chunk</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>对获取的html字符串进行操作，获取图片的url地址等信息</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据全部接收完成后，自动触发res.on('end',callback)</span></span><br><span class="line"><span class="comment">//在回调中进行其他操作</span></span><br><span class="line">res.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $=cheerio.load(html) <span class="comment">//解析html</span></span><br><span class="line">    <span class="comment">//通过jQuery操作DOM元素，获取图片地址等信息</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>对图片来源的服务器进行请求，获取图片资源</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用request请求图片地址，获取资源</span></span><br><span class="line">request.head(img_url,<span class="function"><span class="keyword">function</span>(<span class="params">err,res,body</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>将获取到的图片资源保存至本地目录</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request(img_url).pipe(fs.createWriteStream(<span class="string">'./images'</span>+img_name+<span class="string">'.jpg'</span>))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
 
       
       
@@ -139,7 +169,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -147,19 +177,10 @@
   
 <nav id="article-nav">
   
-    <a href="/2019-08-08/博客更新日志/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          博客更新日志
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019-07-29/demo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019-09-19/Gridea客户端管理博客/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">demo</div>
+      <div class="article-nav-title">Gridea客户端管理博客</div>
     </a>
   
 </nav>
