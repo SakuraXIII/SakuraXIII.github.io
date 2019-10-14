@@ -99,11 +99,11 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-博客更新日志" class="article article-type-post" itemscope
+        <section id="main"><article id="post-阿里云服务器初体验" class="article article-type-post" itemscope
   itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019-08-08/博客更新日志/" class="article-date">
-  <time datetime="2019-08-08T02:12:20.000Z" itemprop="datePublished">2019-08-08</time>
+    <a href="/2019-10-13/阿里云服务器初体验/" class="article-date">
+  <time datetime="2019-10-13T06:41:00.000Z" itemprop="datePublished">2019-10-13</time>
 </a>
     
   </div>
@@ -114,7 +114,7 @@
       
   
     <h1 class="article-title" itemprop="name">
-      博客更新日志
+      阿里云服务器初体验
     </h1>
   
 
@@ -124,11 +124,18 @@
       
       
       
-      <h2 id="网站名字样式修改"><a href="#网站名字样式修改" class="headerlink" title="网站名字样式修改"></a>网站名字样式修改</h2><p>前几天突然发现网站头像下面的名字在大屏幕下居然显示的很小（我明明设置的很大呀！！），查了一下发现是被默认重置样式覆盖掉了。。。</p>
-<h2 id="添加滚动条样式"><a href="#添加滚动条样式" class="headerlink" title="添加滚动条样式"></a>添加滚动条样式</h2><p>在逛我收藏的其他几位大佬的博客的时候，突然发现他们的滚动条样式都被修改了，于是百度了一下实现方法：转自<a href="https://www.cnblogs.com/sherryweb/p/11023311.html" target="_blank" rel="noopener">博客园</a></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> <span class="comment">/*滚动条整体部分*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span>  <span class="comment">/*滚动条里面的小方块，能上下左右移动（取决于是垂直滚动条还是水平滚动条）*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span>  <span class="comment">/*滚动条的轨道*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-button</span> <span class="comment">/*滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track-piece</span> <span class="comment">/*内层轨道，滚动条中间部分（除去）*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-corner</span> <span class="comment">/*边角，即两个滚动条的交汇处*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-resizer</span> <span class="comment">/*两个滚动条的交汇处上用于通过拖动调整元素大小的小控件*/</span></span><br></pre></td></tr></table></figure>
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从用Hexo搭建了自己的博客网站后，时间长了发现这个静态博客维护起来还是很麻烦的，还有一些局限性。就一直想拥有一个自己的服务器，用来搭建WordPress或者其他平台的动态博客，这样扩展的空间就更大了。这几天在阿里云申请了一个月的<a href="https://free.aliyun.com/?spm=5176.227096.7y9jhqsfz.56.b90b2604Kjaxe5" target="_blank" rel="noopener">免费试用</a>，打算先试下水，熟悉一下，如果体验不错的话，后期打算买一年的来玩弄玩弄ヾ(≧▽≦*)o</p>
+<a id="more"></a>
 
-<p>在进行测试预览的时候，发现滚动条的样式只有在谷歌浏览器上才有用（大概使用谷歌浏览器内核的都可以），IE，Edge上都看不到效果。我大谷歌还是强👍。</p>
+<p>所以，后面可能会停用这个博客，迁移到WordPress。</p>
+<p><img src="/images/post/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E4%BD%93%E9%AA%8C/12.jpg" alt></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>这次申请的试用服务器配置是1核1G，1M带宽，外加40G系统盘。</p>
+<p>申请之后，填写好相关的信息提交后，就会收到阿里云发送的邮件，同时在阿里云控制台创建一个实例，简单说就是你申请的服务器了。提供了内网和外网的IP地址。</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>因为没有玩过Linux内核的操作系统，所以最开始使用的是Windows Server 2012 R2操作系统。</p>
+<p>启动阿里云实例提供的远程连接，进入桌面后，看着和WIN 10没什么区别，第一次接触服务器，也不知道能够干什么，就尝试着搭建网站。在网上找到相关的教程后，打开服务器管理器安装好相关的IIS服务。然后在<code>管理工具</code>中打开<code>IIS工具</code>，里面已经提供了默认的一个站点，这个时候其实可以在浏览器中尝试访问了。如果还不行，有可能是阿里云安全组里没有开放对应的端口。如果要创建一个新的网站，可以参考<a href>教程</a>(<a href="https://blog.csdn.net/Simon798/article/details/92801368)，其实当时我并没有配置好，始终不能访问，似乎是HTML文件的访问权限没有开，但是也没有尝试。体验了搭建网站的过程之后，感觉用阿里云提供的远程连接太卡了，就尝试着使用自己电脑自带的远程连接，`运行`中输入`mstsc`打开远程桌面连接，输入服务器的IP地址，然后填写凭据，一开始我以为是自己电脑的账户验证，错了好几次后才突然明白是服务器的账户，最后连接上又再玩了一会儿，感觉流畅了很多。（配置远程桌面连接的时候同时要在服务器端开放远程连接的权限：`控制面板-》系统-》高级系统设置-》远程`）。" target="_blank" rel="noopener">https://blog.csdn.net/Simon798/article/details/92801368)，其实当时我并没有配置好，始终不能访问，似乎是HTML文件的访问权限没有开，但是也没有尝试。体验了搭建网站的过程之后，感觉用阿里云提供的远程连接太卡了，就尝试着使用自己电脑自带的远程连接，`运行`中输入`mstsc`打开远程桌面连接，输入服务器的IP地址，然后填写凭据，一开始我以为是自己电脑的账户验证，错了好几次后才突然明白是服务器的账户，最后连接上又再玩了一会儿，感觉流畅了很多。（配置远程桌面连接的时候同时要在服务器端开放远程连接的权限：`控制面板-》系统-》高级系统设置-》远程`）。</a></p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>一直听说Linux系统多么多么好，与Windows不一样，玩完Windows Server,这次就来安装了一下。把服务器停机后，更换系统盘，选择了<code>Ubuntu</code>，远程连接之后，一入眼的界面就是终端。。。看到一脸懵，完全没想到就是这个样子，鉴于从来没接触过，对命令一无所知，找到教程后就安装了图形界面，毕竟我其实就是想看这个的。进入图形界面后，感觉Ubuntu的图形界面风格确实挺好看的，至于操作方式上。。也没什么明显的不同，个人感觉就像是Android和iOS的区别，大体相同，玩法不同。可能是刚刚接触，还没有发现吧。用了一会儿之后，发现了一个令我不得不卸载图形界面的问题，服务器配置太低了，图形界面完全不能操作，也就只能玩一玩鼠标，开个记事本都卡死。卸载图形界面后，只剩下终端，也就没什么看的了。。。</p>
+<h3 id="宝塔"><a href="#宝塔" class="headerlink" title="宝塔"></a>宝塔</h3><p>再次换成CentOS，打算再装一下WordPress的镜像，结果看见了宝塔，就把宝塔装了。弄了一会儿宝塔后，发现可以直接对服务器上的文件进行管理，以及服务器端口的安全管控，还有服务器流量的图形化数据监测，最重要的是可以安装第三方工具进行扩展，里面就有WordPress。真的是。。。超级好用！</p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>这几天的服务器体验，让我对服务器这个东西的理解更深了点，其实真的就是一台二十四小时不停机的电脑而已。目前服务器对我来说还没有什么大的用处，我打算尝试着开始学习后台的东西，写一些简单的API放在服务器上运行，用来练习技术。</p>
 
       
       
@@ -136,7 +143,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
 
     </footer>
   </div>
@@ -144,19 +151,10 @@
   
 <nav id="article-nav">
   
-    <a href="/2019-08-31/我的第一个项目经历/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于我的第一个项目的经历
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019-08-03/博客搭建初步完成啦/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019-10-10/NodeJs爬取网页学习/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">博客搭建初步完成啦</div>
+      <div class="article-nav-title">NodeJs爬取网页学习</div>
     </a>
   
 </nav>
