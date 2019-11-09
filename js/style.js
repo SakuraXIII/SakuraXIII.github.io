@@ -43,4 +43,14 @@ $(function () {
     //控制台输出一张图片
     console.log("%c ", "background:url(https://sakuraxiii.github.io/images/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
 
+    // wow.js
+    wow = new WOW({
+        boxClass: 'wow', // default
+        animateClass: 'animated', // default
+        offset: 50, // default
+        mobile: true, // default
+        live: true // default
+    })
+    wow.init();
+    $("article:odd").addClass("bounceInRight"); //添加自右向左的出场动画
 })

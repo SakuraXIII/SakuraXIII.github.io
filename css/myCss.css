@@ -1,0 +1,40 @@
+.article-entry blockquote {
+    background-color: #17d8bd;
+    margin: 0;
+    text-align: unset;
+    padding: 10px 5px;
+}
+
+.article-entry blockquote p {
+    font-size: 14px;
+    margin: 0.8em 0;
+}
+
+.article-inner {
+    border-radius: 10px;
+    background-color: rgba(117, 202, 241, 0.4);
+}
+
+.widget a {
+    color: #454166;
+}
+
+.widget {
+    text-shadow: unset;
+    background-color: rgba(91, 156, 213, 0.4);
+}
+
+.article-entry .article-more-link {
+    margin: 1.0em 0;
+    text-align: right;
+}
+
+#sidebar {
+    float: right;
+}
+
+@media screen and (min-width: 768px) {
+    #main {
+        width: 70.3333%;
+    }
+}

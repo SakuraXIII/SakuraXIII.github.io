@@ -103,78 +103,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019-10-18/Nodejs实现接口请求/" class="archive-article-date">
-  <time datetime="2019-10-18T09:57:00.000Z" itemprop="datePublished">10月 18</time>
+        <section id="main"><article id="post-js中的引用类型" class="wow bounceInLeft article article-type-post" itemscope
+  itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019-11-10/js中的引用类型/" class="article-date">
+  <time datetime="2019-11-09T16:00:00.000Z" itemprop="datePublished">2019-11-10</time>
 </a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
       
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019-10-18/Nodejs实现接口请求/">Nodejs实现接口的请求</a>
+    <h1 class="article-title" itemprop="name">
+      js中的引用类型
     </h1>
   
 
     </header>
-  </div>
-</article>
-  
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019-10-13/阿里云服务器初体验/" class="archive-article-date">
-  <time datetime="2019-10-13T06:41:00.000Z" itemprop="datePublished">10月 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019-10-13/阿里云服务器初体验/">阿里云服务器初体验</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019-10-10/Nodejs爬取网页学习/" class="archive-article-date">
-  <time datetime="2019-10-10T10:00:00.000Z" itemprop="datePublished">10月 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019-10-10/Nodejs爬取网页学习/">NodeJs爬取网页学习</a>
-    </h1>
-  
+      
+      <p>之前做的小案例关于对象和arr.push的问题是关于引用数据类型和基本数据类型在内存中的存储方式的区别。具体的细节参考<a href="https://www.cnblogs.com/c2016c/articles/9328725.html" target="_blank" rel="noopener">大佬</a>的文章。这里也就简单的总结记录一下。</p>
+<a id="more"></a>
 
-    </header>
+<p><img src="/images/post/js%E4%B8%AD%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/48.png" alt></p>
+<h3 id="两大数据类型"><a href="#两大数据类型" class="headerlink" title="两大数据类型"></a>两大数据类型</h3><p>根据大佬的解释，js中数据类型分为<code>基本数据类型</code>和<code>引用数据类型</code>两大类。</p>
+<ul>
+<li>基本数据类型：Number、String、Boolean、Null、 Undefined、Symbol</li>
+<li>引用数据类型：Object，即除基本数据类型以外的皆为对象。</li>
+</ul>
+<p>基本数据类型的变量保存的是数据真实的值，存储在内存栈中，由系统自动释放，而引用数据类型是存储在内存堆中，接收的变量保存的只是对象保存在栈中的一个指针，不一定自动释放。</p>
+<p>将对象赋值给其他变量时，只是把指针赋给其他变量，实际上还是指向的同一片内存空间，修改其中任何一个变量，都会使得另一个变量的值改变。</p>
+<p>之前的小案例的错误代码中声明并初始化全局变量table时，arr.push(table)的所有对象值全部一样，就是因为在整个程序执行过程中，table保存的指针没有改变过，一直都是同一片内存空间。而在函数方法的内部进行对象的初始化，每循环一次，都会重新开辟内存空间，创建一个新的table。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
   </div>
-</article>
   
   
-    </div></section>
+<nav id="article-nav">
   
+  
+    <a href="/2019-11-09/exceljs的使用（三）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">exceljs操作Excel（三）</div>
+    </a>
+  
+</nav>
 
+  
+</article>
 
 </section>
         
