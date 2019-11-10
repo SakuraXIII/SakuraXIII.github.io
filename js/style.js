@@ -48,7 +48,7 @@ $(function () {
         boxClass: 'wow', // default
         animateClass: 'animated', // default
         offset: 50, // default
-        mobile: true, // default
+        mobile: false, // default
         live: true // default
     })
     wow.init();

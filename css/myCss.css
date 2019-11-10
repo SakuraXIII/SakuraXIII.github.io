@@ -37,4 +37,15 @@
     #main {
         width: 70.3333%;
     }
+    .top-banner .mdtitle h1 {
+        font-size: 30px;
+    }
+
 }
+
+@media screen and (max-width: 768px){
+    .top-banner .ban-title {
+        width: 100%;
+    }
+}
+
