@@ -41,7 +41,7 @@ $(function () {
 
 
     //控制台输出一张图片
-    console.log("%c ", "background:url(/images/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
+    console.log("%c ", "background:url(https://tonyteachers.gitee.io/images/2233-Q.jpg)  no-repeat top left;padding-left:100%;padding-bottom:25%;border-radius:10px;margin:5px 0 ")
 
     // wow.js
     var wow = new WOW({
