@@ -37,15 +37,31 @@
     #main {
         width: 70.3333%;
     }
+
     .top-banner .mdtitle h1 {
         font-size: 30px;
     }
 
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .top-banner .ban-title {
         width: 100%;
     }
 }
 
+
+.article-entry blockquote {
+    position: relative;
+    padding: 10px 2%;
+}
+
+blockquote::before {
+    content: "";
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #baceca;
+}
