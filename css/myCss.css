@@ -65,3 +65,15 @@ blockquote::before {
     left: 0;
     background: #baceca;
 }
+
+.widget-wrap ul li {
+    transition: all 500ms linear;
+}
+
+.widget-wrap ul li:hover {
+    padding-left: 10px;
+}
+
+.widget a:hover {
+    text-decoration: none;
+}
