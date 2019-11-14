@@ -77,3 +77,8 @@ blockquote::before {
 .widget a:hover {
     text-decoration: none;
 }
+
+/* //播放器 */
+.aplayer.aplayer-fixed .aplayer-body {
+    bottom: 10px !important;
+}
