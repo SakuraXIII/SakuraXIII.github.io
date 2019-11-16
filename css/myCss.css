@@ -12,7 +12,7 @@
 
 .article-inner {
     border-radius: 10px;
-    background-color: rgba(117, 202, 241, 0.4);
+    background-color: rgba(225, 225, 255, 0.4);
 }
 
 .widget a {
@@ -21,7 +21,7 @@
 
 .widget {
     text-shadow: unset;
-    background-color: rgba(91, 156, 213, 0.4);
+    background-color: rgba(225, 225, 255, 0.4);
 }
 
 .article-entry .article-more-link {
@@ -79,6 +79,15 @@ blockquote::before {
 }
 
 /* //播放器 */
+.aplayer.aplayer-fixed,
 .aplayer.aplayer-fixed .aplayer-body {
-    bottom: 10px !important;
+    bottom: 50% !important;
+}
+
+.article-entry ul li {
+    margin-left: 2.0em;
+}
+
+.article-entry ul li p {
+    text-indent: unset;
 }

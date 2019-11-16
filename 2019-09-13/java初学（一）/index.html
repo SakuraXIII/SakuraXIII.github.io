@@ -15,19 +15,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/loader.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/js/live2d/waifu.css">
   <link rel="stylesheet" href="/css/myCss.css">
 </head></html>
 
 <body>
   <div id="container" class="container-fluid">
     <div id="wrap">
-      <!--<canvas></canvas> TODO-->
-
-
-<!--//头部展示-->
+      <!--//头部展示-->
 <header>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div class="load_title">正在加载二刺螈站点<br><span>V1.0</span></div>
+  </div>
   <!--页面背景图-->
   <div class="theme-bg"></div>
   <!--导航栏-->
@@ -235,6 +239,10 @@
       <ul>
         
           <li>
+            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
+          </li>
+        
+          <li>
             <a href="/2019-11-10/js中的引用类型/">js中的引用类型</a>
           </li>
         
@@ -248,10 +256,6 @@
         
           <li>
             <a href="/2019-11-08/exceljs的使用（一）/">exceljs操作Excel（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2019-10-18/Nodejs实现接口请求/">Nodejs实现接口的请求</a>
           </li>
         
       </ul>
@@ -281,43 +285,51 @@
   
 </nav>
     
-
-    <!-- // live2d -->
-    <div class="waifu">
-      <div class="waifu-tips"></div>
-      <canvas id="live2d" class="live2d"></canvas>
-      <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
+    <div class="live2d hidden-xs hidden-sm">
+      <link rel="stylesheet" href="/js/live2d/waifu.css">
+      <script src="/js/live2d/live2d.js"></script>
+      <script src="/js/live2d/waifu-tips.js"></script>
+      <!-- // live2d -->
+      <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" class="live2d"></canvas>
+        <div class="waifu-tool">
+          <span class="fui-home"></span>
+          <span class="fui-chat"></span>
+          <span class="fui-eye"></span>
+          <span class="fui-user"></span>
+          <span class="fui-photo"></span>
+          <span class="fui-info-circle"></span>
+          <span class="fui-cross"></span>
+        </div>
       </div>
+      <script type="text/javascript">
+        live2d_settings['modelId'] = 4;
+        live2d_settings['modelTexturesId'] = 87;
+        initModel("/js/live2d/waifu-tips.json")
+      </script>
     </div>
-
-    <!-- //网易云播放器 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
-    <script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>
-    <div id="aplayer" class="aplayer" data-id="2977391318" data-server="netease" data-type="playlist" data-fixed="true"
-      data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
-    <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
-
+    <div class="player hidden-xs hidden-sm">
+      <!-- //网易云播放器 -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+      <div id="aplayer" class="aplayer" data-id="2977391318" data-server="netease" data-type="playlist"
+        data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+      <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
-  <script src="/js/live2d/live2d.js"></script>
-  <script src="/js/live2d/waifu-tips.js"></script>
   <script src="/js/snow.js"></script>
   <script src="/js/style.js"></script>
   <script type="text/javascript">
-    live2d_settings['modelId'] = 4;
-    live2d_settings['modelTexturesId'] = 87;
-    initModel("/js/live2d/waifu-tips.json")
+    // 等待所有加载
+    $(window).load(function () {
+      $('body').addClass('loaded');
+      $('#loader-wrapper .load_title').remove();
+    });
   </script>
 </body>
 

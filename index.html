@@ -15,19 +15,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/loader.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/js/live2d/waifu.css">
   <link rel="stylesheet" href="/css/myCss.css">
 </head></html>
 
 <body>
   <div id="container" class="container-fluid">
     <div id="wrap">
-      <!--<canvas></canvas> TODO-->
-
-
-<!--//头部展示-->
+      <!--//头部展示-->
 <header>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div class="load_title">正在加载二刺螈站点<br><span>V1.0</span></div>
+  </div>
   <!--页面背景图-->
   <div class="theme-bg"></div>
   <!--导航栏-->
@@ -105,6 +109,52 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-博客全面更新" class="wow bounceInLeft article article-type-post" itemscope
+  itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019-11-14/博客全面更新/" class="article-date">
+  <time datetime="2019-11-14T09:23:00.000Z" itemprop="datePublished">2019-11-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 很久没有魔改博客了，一直只是记录生活，主要是觉得改起来太麻烦了，懒癌作祟，就没改了。然后由于各种原因，最近又开始折腾了，然后就顺便全面大改造一下，添加了一些插件。用到的各种插件都是从各位大佬那里收集来的。</p>
+      
+      <p class="article-more-link">
+        <a href="/2019-11-14/博客全面更新/">阅读更多</a>
+      </p>
+      
+      
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-js中的引用类型" class="wow bounceInLeft article article-type-post" itemscope
   itemprop="blogPost">
@@ -502,55 +552,9 @@
 
 
   
-    <article id="post-关于项目的开发流程" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019-08-31/关于项目的开发流程/" class="article-date">
-  <time datetime="2019-08-31T10:11:18.000Z" itemprop="datePublished">2019-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019-08-31/关于项目的开发流程/">关于项目的开发流程</a>
-    </h1>
-  
-
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>从8月20号开始到今天8月31号，11天的时间，35个文件的创建，终于，我的第一个项目完成了，这次赶鸭子上架的项目经历真是一下子学到了很多的东西。虽然只是个很简单的页面重写需求。一开始的只知道需要写页面，到现在稍微了解了前后分离式项目模式中前端需要完成的一些任务。在这里，就记录一下我完成这个项目后所了解到的完成一个项目的大致步骤。</p>
-      
-      <p class="article-more-link">
-        <a href="/2019-08-31/关于项目的开发流程/">阅读更多</a>
-      </p>
-      
-      
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-
-
-  <nav id="page-nav" class="wow bounceInUp"
+  <nav id="page-nav" class="wow bounceIn"
     
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
@@ -589,6 +593,10 @@
       <ul>
         
           <li>
+            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
+          </li>
+        
+          <li>
             <a href="/2019-11-10/js中的引用类型/">js中的引用类型</a>
           </li>
         
@@ -602,10 +610,6 @@
         
           <li>
             <a href="/2019-11-08/exceljs的使用（一）/">exceljs操作Excel（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2019-10-18/Nodejs实现接口请求/">Nodejs实现接口的请求</a>
           </li>
         
       </ul>
@@ -635,43 +639,51 @@
   
 </nav>
     
-
-    <!-- // live2d -->
-    <div class="waifu">
-      <div class="waifu-tips"></div>
-      <canvas id="live2d" class="live2d"></canvas>
-      <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
+    <div class="live2d hidden-xs hidden-sm">
+      <link rel="stylesheet" href="/js/live2d/waifu.css">
+      <script src="/js/live2d/live2d.js"></script>
+      <script src="/js/live2d/waifu-tips.js"></script>
+      <!-- // live2d -->
+      <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" class="live2d"></canvas>
+        <div class="waifu-tool">
+          <span class="fui-home"></span>
+          <span class="fui-chat"></span>
+          <span class="fui-eye"></span>
+          <span class="fui-user"></span>
+          <span class="fui-photo"></span>
+          <span class="fui-info-circle"></span>
+          <span class="fui-cross"></span>
+        </div>
       </div>
+      <script type="text/javascript">
+        live2d_settings['modelId'] = 4;
+        live2d_settings['modelTexturesId'] = 87;
+        initModel("/js/live2d/waifu-tips.json")
+      </script>
     </div>
-
-    <!-- //网易云播放器 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
-    <script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>
-    <div id="aplayer" class="aplayer" data-id="2977391318" data-server="netease" data-type="playlist" data-fixed="true"
-      data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
-    <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
-
+    <div class="player hidden-xs hidden-sm">
+      <!-- //网易云播放器 -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+      <div id="aplayer" class="aplayer" data-id="2977391318" data-server="netease" data-type="playlist"
+        data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+      <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
-  <script src="/js/live2d/live2d.js"></script>
-  <script src="/js/live2d/waifu-tips.js"></script>
   <script src="/js/snow.js"></script>
   <script src="/js/style.js"></script>
   <script type="text/javascript">
-    live2d_settings['modelId'] = 4;
-    live2d_settings['modelTexturesId'] = 87;
-    initModel("/js/live2d/waifu-tips.json")
+    // 等待所有加载
+    $(window).load(function () {
+      $('body').addClass('loaded');
+      $('#loader-wrapper .load_title').remove();
+    });
   </script>
 </body>
 

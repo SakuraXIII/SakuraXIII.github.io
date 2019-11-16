@@ -373,8 +373,8 @@ a.article-title:hover {
   clear: both;
 }
 .article-entry p {
-  line-height: 1.5em;
-  margin: 1.8em 0;
+  line-height: 2em;
+  margin: 1em 0;
   text-indent: 2em;
 }
 .article-entry table {
@@ -1034,7 +1034,6 @@ ol {
   z-index: -1;
   bottom: 0;
   right: 0;
-  opacity: 0.5;
 }
 .hidden-bar {
   background: rgba(69,108,176,0.5);
