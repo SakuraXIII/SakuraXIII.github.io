@@ -12,7 +12,7 @@
 
 .article-inner {
     border-radius: 10px;
-    background-color: rgba(225, 225, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.78);
 }
 
 .widget a {
@@ -21,7 +21,7 @@
 
 .widget {
     text-shadow: unset;
-    background-color: rgba(225, 225, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.78);
 }
 
 .article-entry .article-more-link {
@@ -90,4 +90,9 @@ blockquote::before {
 
 .article-entry ul li p {
     text-indent: unset;
+}
+
+.commentModel {
+    background-color: rgba(255, 255, 255);
+    padding: 5px;
 }
