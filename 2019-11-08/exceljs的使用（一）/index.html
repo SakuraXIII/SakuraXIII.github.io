@@ -134,13 +134,13 @@
       
       
       
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天，同学接到一个任务，由于任务量很大，所以也交给我了一部分（相当大的一部分😂）。目的是将一份Excel工作表中的地点信息通过百度的<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank" rel="noopener">坐标拾取系统</a>获取到经纬度信息，并将对应的地点的编号及其放入另一份文件的工作表中，同时给地点不明确的模糊数据进行标记。</p>
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天，同学接到一个任务，由于任务量很大，所以也交给我了一部分。目的是将一份Excel工作表中的地点信息通过百度的<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank" rel="noopener">坐标拾取系统</a>获取到经纬度信息，并将对应的地点的编号及其放入另一份文件的工作表中，同时给地点不明确的模糊数据进行标记。</p>
 <a id="more"></a>
 
-<p>当时并没有仔细看过文件就接下来了，等打开看的时候就后悔了。。。这数据量实在是太大了，上千条数据。。。尝试着处理了11个以后，时间已经过去一个小时，我开始明白这仅凭人工操作会玩死人。</p>
+<p>当时并没有仔细看过文件就接下来了，等打开看的时候就后悔了。。。这数据量实在是太大了，上千条数据。尝试着处理了11个以后，时间已经过去一个小时，我开始明白这仅凭人工操作太浪费时间了。</p>
 <p><code>鲁迅先生说过：懒是人类进步的阶梯</code></p>
 <p><img src="/images/post/exceljs%E7%9A%84%E4%BD%BF%E7%94%A8/luxun.jpeg" alt="鲁迅"></p>
-<p>所以，我决定运用科学上网的能力，使用nodejs进行面向百度编程，用脚本处理数据。于是就在网上找到了<a href="https://github.com/exceljs/exceljs" target="_blank" rel="noopener">exceljs</a>的插件。</p>
+<p>所以，我决定运用网上冲浪的能力，使用nodejs进行面向百度编程，用脚本处理数据。于是就在网上找到了<a href="https://github.com/exceljs/exceljs" target="_blank" rel="noopener">exceljs</a>的插件。</p>
 <h2 id="申请百度地图API的AK"><a href="#申请百度地图API的AK" class="headerlink" title="申请百度地图API的AK"></a>申请百度地图API的AK</h2><p>这次要做的东西需要请求百度地图API，找到<a href="http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-placeapi" target="_blank" rel="noopener">官方文档</a>后，需要申请AK，也就是用来验证的个人密钥。</p>
 <p><img src="/images/post/exceljs%E7%9A%84%E4%BD%BF%E7%94%A8/API.png" alt="API地址"></p>
 <p>申请AK需要登录账号，然后进入控制台，在我的应用中创建一个应用，因为我是用nodejs，所以选择的是服务端，我的目标是地名转换为坐标，所以需要地点检索，其他的就不需要了。每个选项都根据个人所需选择吧</p>
@@ -223,6 +223,10 @@
       <ul>
         
           <li>
+            <a href="/2020-01-30/pywifi使用/">pywifi使用</a>
+          </li>
+        
+          <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
           </li>
         
@@ -236,10 +240,6 @@
         
           <li>
             <a href="/2019-11-09/exceljs的使用（三）/">exceljs操作Excel（三）</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-09/exceljs的使用（二）/">exceljs操作Excel（二）</a>
           </li>
         
       </ul>

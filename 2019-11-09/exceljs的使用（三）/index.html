@@ -135,7 +135,7 @@
       
       
       <h2 id="问题及处理"><a href="#问题及处理" class="headerlink" title="问题及处理"></a>问题及处理</h2><h4 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h4><p>在最初的代码中，我的执行流程是在读取文件遍历每条信息时就写入对象<code>table</code>中，同时立即请求API，将获取的经纬度写入对象中，push进数组<code>arr</code>，最后打印数组。</p>
-<h5 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h5><p>结果发现只要执行文件就会报错，显示请求路径包含为转义的字符，这是URL包含中文导致的，在浏览器地址栏中输入中文，浏览器会帮我们把中文编码为utf-8。所以这里我们要将每次生成的请求URL进行编码。这里有两种编码函数<code>encodeURI()</code>,<code>encodeURIComponent()</code></p>
+<h5 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h5><p>结果发现只要执行文件就会报错，显示请求路径包含为转义的字符，这是URL编码的问题，在浏览器地址栏中输入中文，浏览器会帮我们把中文编码为utf-8。所以这里我们要将每次生成的请求URL进行编码。这里有两种编码函数<code>encodeURI()</code>,<code>encodeURIComponent()</code></p>
 <p>这两个方法有一点区别，这里引用<a href="https://www.jianshu.com/p/67508d824af1" target="_blank" rel="noopener">大佬博客</a>的解释：</p>
 <blockquote>
 <p>encodeURI()是Javascript中真正用来对URL编码的函数。</p>
@@ -228,6 +228,10 @@
       <ul>
         
           <li>
+            <a href="/2020-01-30/pywifi使用/">pywifi使用</a>
+          </li>
+        
+          <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
           </li>
         
@@ -241,10 +245,6 @@
         
           <li>
             <a href="/2019-11-09/exceljs的使用（三）/">exceljs操作Excel（三）</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-09/exceljs的使用（二）/">exceljs操作Excel（二）</a>
           </li>
         
       </ul>
