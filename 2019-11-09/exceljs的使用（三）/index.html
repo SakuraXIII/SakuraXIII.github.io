@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-exceljs的使用（三）" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-exceljs的使用（三）" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-11-09/exceljs的使用（三）/" class="article-date">
   <time datetime="2019-11-09T06:54:00.000Z" itemprop="datePublished">2019-11-09</time>
@@ -132,9 +132,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
       <h2 id="问题及处理"><a href="#问题及处理" class="headerlink" title="问题及处理"></a>问题及处理</h2><h4 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h4><p>在最初的代码中，我的执行流程是在读取文件遍历每条信息时就写入对象<code>table</code>中，同时立即请求API，将获取的经纬度写入对象中，push进数组<code>arr</code>，最后打印数组。</p>
+<a id="more"></a>
+
 <h5 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h5><p>结果发现只要执行文件就会报错，显示请求路径包含为转义的字符，这是URL编码的问题，在浏览器地址栏中输入中文，浏览器会帮我们把中文编码为utf-8。所以这里我们要将每次生成的请求URL进行编码。这里有两种编码函数<code>encodeURI()</code>,<code>encodeURIComponent()</code></p>
 <p>这两个方法有一点区别，这里引用<a href="https://www.jianshu.com/p/67508d824af1" target="_blank" rel="noopener">大佬博客</a>的解释：</p>
 <blockquote>
@@ -157,33 +157,33 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之，这次为了解决繁琐重复的人工操作而实现的程序对我而言还是相当有挑战的，花了两天三夜的时间，一度怀疑自己的编程能力，想要放弃，但是一想到那上千条数据，不得不继续写下去。也确实意识到在js基础上的一些问题，越深入了解越觉得有意思。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-11-10/js中的引用类型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          js中的引用类型
-        
-      </div>
-    </a>
+  <a href="/2019-11-09/exceljs的使用（二）/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">exceljs操作Excel（二）</div>
+  </a>
   
   
-    <a href="/2019-11-09/exceljs的使用（二）/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">exceljs操作Excel（二）</div>
-    </a>
+  <a href="/2019-11-10/js中的引用类型/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      js中的引用类型
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -314,9 +314,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

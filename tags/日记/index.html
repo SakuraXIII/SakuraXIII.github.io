@@ -110,17 +110,17 @@
       <div class="outer">
         <section id="main">
           
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
+
+
+
+
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2020" class="archive-year">2020</a>
+  </div>
+  <div class="archives">
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -138,18 +138,19 @@
     </header>
   </div>
 </article>
-  
     
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
+
+
+
+</div>
+</section>
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2019" class="archive-year">2019</a>
+  </div>
+  <div class="archives">
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -167,9 +168,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -186,9 +187,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -205,10 +206,10 @@
     </header>
   </div>
 </article>
-  
-  
-    </div></section>
-  
+    
+    
+  </div>
+</section>
 
 
 
@@ -333,9 +334,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

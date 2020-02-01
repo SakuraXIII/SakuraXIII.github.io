@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-pywifi使用" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-pywifi使用" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020-01-30/pywifi使用/" class="article-date">
   <time datetime="2020-01-29T16:00:00.000Z" itemprop="datePublished">2020-01-30</time>
@@ -132,10 +132,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
-      
-      
+      <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>pywifi的<a href="https://github.com/awkman/pywifi/blob/master/DOC.md" target="_blank" rel="noopener">github</a>地址，<a href="https://pypi.org/project/pywifi/" target="_blank" rel="noopener">PyPI</a>平台地址。</p>
+<p>这是一个可以用来操纵设备无线网卡的python库，一开始发现这个库的时候想着写个破解wifi的程序，通过暴力破解的方式获取wifi密码。对这个库进一步了解后发现实际是不行的，效率太低了，使用多线程或许可以。</p>
+<a id="more"></a>
+
+<p><img src="/images/post/pywifi/42.png" alt></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>将库下载并导入相关需要的库到项目：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pywifi</span><br><span class="line"><span class="keyword">import</span> pywifi</span><br><span class="line"><span class="keyword">from</span> pywifi <span class="keyword">import</span> const</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> itertools</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>PyWiFi()</code>获取设备的无线网卡对象并获取网卡的接口信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wifi = pywifi.PyWiFi();</span><br><span class="line">interface = wifi.interface()[<span class="number">0</span>] </span><br><span class="line"><span class="comment"># 返回的是一个数组，一般只有一个Wi-Fi interface</span></span><br></pre></td></tr></table></figure>
+
+<p>正式使用前先列出主要的几个方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface.status() <span class="comment"># 获取网卡状态，即是否处于连接或其他状态 </span></span><br><span class="line">interface.scan() <span class="comment"># 触发接口扫描APs</span></span><br><span class="line">interface.scan_results() <span class="comment"># 返回扫描后的结果profile对象</span></span><br><span class="line">interface.add_network_profile(profile) <span class="comment"># 添加用于连接的AP配置文件</span></span><br><span class="line">interface.connect(profile) <span class="comment"># 给定的profile连接到指定的AP</span></span><br><span class="line">interface.disconnect() <span class="comment"># 断开当前的连接</span></span><br></pre></td></tr></table></figure>
+
+<p>首先要通过扫描获取设备所处环境周围的WIFI信号，这需要一定的时间，根据设备性能决定，时间越长自然获取的越多：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(iface.name()) <span class="comment"># 这个可以获取接口名字，就是网卡的设备名字</span></span><br><span class="line">print(<span class="string">'开始扫描'</span>)</span><br><span class="line">iface.scan()</span><br><span class="line">time.sleep(<span class="number">5</span>) <span class="comment"># 等待5秒后获取结果</span></span><br><span class="line">print(<span class="string">'扫描完成'</span>)</span><br><span class="line">result = iface.scan_results() <span class="comment"># 获取扫描结果，返回的是一个可迭代对象</span></span><br></pre></td></tr></table></figure>
+
+<p>由于返回的结果会出现重复的现象，所以再将其进行去重：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">profile = removeRepeat(result)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeRepeat</span><span class="params">(repeat)</span>:</span></span><br><span class="line">    new = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> repeat:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> new:</span><br><span class="line">            new.append(i)</span><br><span class="line">    <span class="keyword">return</span> new</span><br></pre></td></tr></table></figure>
+
+<p>最后可以将<code>profile</code>进行打印：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">displayAPs</span><span class="params">(profile)</span>:</span></span><br><span class="line">    print(<span class="string">'获取到%d个信号:'</span> % (len(profile)))</span><br><span class="line">    print(<span class="string">"%-3s %-19s %-19s %s"</span> </span><br><span class="line">          % (<span class="string">'序号'</span>, <span class="string">'ssid'</span>, <span class="string">'MAC地址'</span>, <span class="string">'加密方式'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> profile:</span><br><span class="line">        print(<span class="string">"|%-4s|%-20s|%-20s|%s"</span></span><br><span class="line">              % (profile.index(i) + <span class="number">1</span>, i.ssid, i.bssid, </span><br><span class="line">                 <span class="string">'WPA2PSK'</span> <span class="keyword">if</span> i.akm[<span class="number">0</span>] == const.AKM_TYPE_WPA2PSK <span class="keyword">else</span> <span class="string">'其他'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/post/pywifi/result.png" alt="result"></p>
+
       
     </div>
     <footer class="article-footer">
@@ -143,17 +164,18 @@
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
+  <a href="/2020-01-22/回顾2019及博客的更新日志/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">回顾2019及博客的更新日志</div>
+  </a>
   
-    <a href="/2020-01-22/回顾2019及博客的更新日志/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">回顾2019及博客的更新日志</div>
-    </a>
   
 </nav>
 
@@ -284,9 +306,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

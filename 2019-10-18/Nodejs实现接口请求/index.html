@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-Nodejs实现接口请求" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-Nodejs实现接口请求" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-10-18/Nodejs实现接口请求/" class="article-date">
   <time datetime="2019-10-18T09:57:00.000Z" itemprop="datePublished">2019-10-18</time>
@@ -131,8 +131,6 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      
       
       <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自成功实现用Nodejs实现小爬虫后，对Nodejs异常感兴趣，其他的都搁置一边了，正巧又碰到在看的一个前端网课的案例接口不能用了，于是乎决定自己实现那个接口。</p>
 <a id="more"></a>
@@ -189,33 +187,33 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后这个简单的API就完成了，不外乎就是增删查改，顺便放在了服务器上跑着玩。虽然第一次写这个，还没感觉到什么难度，但是也同样遇到了这么多的问题，也是收获不少，重点是要学会面向百度编程（滑稽），以及多看文档，勤加练习，遇到更多的问题，才能有更多的经验。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-11-08/exceljs的使用（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          exceljs操作Excel（一）
-        
-      </div>
-    </a>
+  <a href="/2019-10-13/阿里云服务器初体验/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">阿里云服务器初体验</div>
+  </a>
   
   
-    <a href="/2019-10-13/阿里云服务器初体验/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">阿里云服务器初体验</div>
-    </a>
+  <a href="/2019-11-08/exceljs的使用（一）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      exceljs操作Excel（一）
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -346,9 +344,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

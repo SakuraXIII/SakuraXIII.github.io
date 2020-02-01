@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-js中的引用类型" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-js中的引用类型" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-11-10/js中的引用类型/" class="article-date">
   <time datetime="2019-11-09T16:00:00.000Z" itemprop="datePublished">2019-11-10</time>
@@ -132,8 +132,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
       <p>之前做的小案例关于对象和arr.push的问题是关于引用数据类型和基本数据类型在内存中的存储方式的区别。具体的细节参考<a href="https://www.cnblogs.com/c2016c/articles/9328725.html" target="_blank" rel="noopener">大佬</a>的文章。这里也就简单的总结记录一下。</p>
 <a id="more"></a>
 
@@ -148,33 +146,33 @@
 <p>之前的小案例的错误代码中声明并初始化全局变量table时，arr.push(table)的所有对象值全部一样，就是因为在整个程序执行过程中，table保存的指针没有改变过，一直都是同一片内存空间。而在函数方法的内部进行对象的初始化，每循环一次，都会重新开辟内存空间，创建一个新的table。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-11-14/博客全面更新/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          博客全面更新及教程
-        
-      </div>
-    </a>
+  <a href="/2019-11-09/exceljs的使用（三）/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">exceljs操作Excel（三）</div>
+  </a>
   
   
-    <a href="/2019-11-09/exceljs的使用（三）/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">exceljs操作Excel（三）</div>
-    </a>
+  <a href="/2019-11-14/博客全面更新/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      博客全面更新及教程
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -305,9 +303,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

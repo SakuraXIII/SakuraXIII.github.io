@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-关于项目的开发流程" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-关于项目的开发流程" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-08-31/关于项目的开发流程/" class="article-date">
   <time datetime="2019-08-31T10:11:18.000Z" itemprop="datePublished">2019-08-31</time>
@@ -132,9 +132,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
       <p>11天的时间，终于，接触的第一个项目完成了，虽然是很简单的网站重写，但是也一下子学到了很多的东西。一开始的只知道需要写页面，现在了解了前后分离式项目模式中前端需要完成的一些任务。这里记录一下完成这个项目后所了解到的东西。</p>
+<a id="more"></a>
+
 <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>一个项目的开始，首先应该是前后端人员分析项目需要实现的功能，通过协商交流以确定接口的功能及请求参数，返回数据等其他问题。就我这次所完成的项目的情况而言，只是进行翻新，使用bootstrap+art-template。所以难度上来说不高。</p>
 <p>最开始不知道需要分析页面结构及功能，和后台人员协商决定字段名称，写接口API文档。后来学长来接手后台的实现，让我们写接口文档，这才了解到这个问题。后面又因为经验不足，写的文档问题多多，不得以让学长再重新改，浪费了很多时间。熟悉了之后基本上就没有问题了。不得不说，学长还是太强了。</p>
 <h4 id="施工"><a href="#施工" class="headerlink" title="施工"></a>施工</h4><p>在后台实现逻辑功能的时候，前端则负责写页面，不得不说使用框架效率真的高。接口完成后，测试接口（我们使用JEECG后台管理，Swagger UI作为接口文档测试页面），将返回的数据归纳整理，对每个接口需要的各种参数有所了解，方便后期使用接口。</p>
@@ -171,33 +171,33 @@
 <p>以上就是实现动态加载路径导航的方法，经过测试，一般情况下，还是没有问题的，但是如果从地址栏输入中间的某一级的地址直接进入，仍然不行。所以严格来说，这个功能还是没有实现。我还没有发现能让其自行得到页面层次结构的方法。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-09-19/Gridea客户端管理博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Gridea客户端管理博客
-        
-      </div>
-    </a>
+  <a href="/2019-08-08/博客更新日志/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">博客更新日志</div>
+  </a>
   
   
-    <a href="/2019-08-08/博客更新日志/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">博客更新日志</div>
-    </a>
+  <a href="/2019-09-19/Gridea客户端管理博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      Gridea客户端管理博客
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -328,9 +328,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-博客全面更新" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-博客全面更新" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-11-14/博客全面更新/" class="article-date">
   <time datetime="2019-11-14T09:23:00.000Z" itemprop="datePublished">2019-11-14</time>
@@ -132,9 +132,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
       <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 很久没有魔改博客了，一直只是记录生活，主要是觉得改起来太麻烦了，懒癌作祟，就没改了。然后由于各种原因，最近又开始折腾了，然后就顺便全面大改造一下，添加了一些插件。用到的各种插件都是从各位大佬那里收集来的。</p>
+<a id="more"></a>
+
 <h2 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h2><ul>
 <li><p>更换小屏幕下的封面图片</p>
 </li>
@@ -162,33 +162,33 @@
 <h3 id="关于过场动画"><a href="#关于过场动画" class="headerlink" title="关于过场动画"></a>关于过场动画</h3><p>这个是在<a href="https://xiaoyou66.com/archives/983" target="_blank" rel="noopener">小游大佬</a>这篇文章中发现的，这篇文章中还有其他许多的博客美化方案。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2020-01-22/回顾2019及博客的更新日志/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          回顾2019及博客的更新日志
-        
-      </div>
-    </a>
+  <a href="/2019-11-10/js中的引用类型/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">js中的引用类型</div>
+  </a>
   
   
-    <a href="/2019-11-10/js中的引用类型/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">js中的引用类型</div>
-    </a>
+  <a href="/2020-01-22/回顾2019及博客的更新日志/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      回顾2019及博客的更新日志
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -319,9 +319,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

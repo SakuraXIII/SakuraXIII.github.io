@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-个人blog搭建" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-个人blog搭建" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-07-27/个人blog搭建/" class="article-date">
   <time datetime="2019-07-27T08:54:23.000Z" itemprop="datePublished">2019-07-27</time>
@@ -132,10 +132,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      
       <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>之前朋友搞个服务器，用Wordpress搭建个人博客，感觉挺有意思的，想要创建自己的个人博客。</p>
 <p><strong>终于</strong>，在无意间听说了<code>Github Pages</code>这个名词，于是去百度查了一下，这个功能可以用来创建属于自己的静态页面，提供了1G的存储空间，用来搭建个人博客再好不过了。</p>
+<a id="more"></a>
+
 <p>静态博客又有Hexo、Jekyll两家提供的主流框架，可以配合Github Pages快速搭建属于自己的个人博客，并且他们都是解析Markdown编写的文章，需要有Markdown的语法知识。</p>
 <p>Jekyll是基于Ruby打造，Hexo是基于Node.js打造，身为一个半吊子的前端萌新，自然是更喜欢偏向与前端的Node.js，所以选择的Hexo（创建了GitHub Pages后在仓库的“设置(Settings)”中的“选项(option)”中直接提供了Jekyll的主题选择选项）。</p>
 <p>所以，这篇文章将会是属于Hexo的教程。</p>
@@ -191,28 +191,28 @@
 <p>每次博客有所更新，需要重新部署到GitHub上，才能够同步到自己的博客。</p>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-08-03/博客搭建初步完成啦/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          博客搭建初步完成
-        
-      </div>
-    </a>
   
+  <a href="/2019-08-03/博客搭建初步完成啦/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      博客搭建初步完成
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -343,9 +343,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

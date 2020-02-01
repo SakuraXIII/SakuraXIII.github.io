@@ -109,8 +109,8 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-NodeJs获取网页信息学习" class="wow bounceInLeft article article-type-post" itemscope
-  itemprop="blogPost">
+          <article id="post-NodeJs获取网页信息学习" class="wow bounceInLeft article article-type-post"
+  itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019-10-10/NodeJs获取网页信息学习/" class="article-date">
   <time datetime="2019-10-10T10:00:00.000Z" itemprop="datePublished">2019-10-10</time>
@@ -131,8 +131,6 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      
       
       <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近对NodeJs突然感兴趣。抱着复习一下之前学习的一点内容，靠着面向百度编程的能力，尝试着发送AJAX请求自己写的Json数据，没想到还真弄出来了。然后就想到了爬虫，一直不太明白究竟是怎么爬取数据的，然后这次就打算用NodeJs来试着写一下。</p>
 <a id="more"></a>
@@ -174,33 +172,33 @@
 </ul>
 
       
-      
     </div>
     <footer class="article-footer">
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
+      
     </footer>
   </div>
   
   
 <nav id="article-nav">
   
-    <a href="/2019-10-13/阿里云服务器初体验/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          阿里云服务器初体验
-        
-      </div>
-    </a>
+  <a href="/2019-09-19/Gridea客户端管理博客/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">Gridea客户端管理博客</div>
+  </a>
   
   
-    <a href="/2019-09-19/Gridea客户端管理博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Gridea客户端管理博客</div>
-    </a>
+  <a href="/2019-10-13/阿里云服务器初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">
+      
+      阿里云服务器初体验
+      
+    </div>
+  </a>
   
 </nav>
 
@@ -331,9 +329,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->

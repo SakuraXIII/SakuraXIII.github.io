@@ -110,17 +110,17 @@
       <div class="outer">
         <section id="main">
           
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
+
+
+
+
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2020" class="archive-year">2020</a>
+  </div>
+  <div class="archives">
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -138,9 +138,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -157,18 +157,19 @@
     </header>
   </div>
 </article>
-  
     
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
+
+
+
+</div>
+</section>
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2019" class="archive-year">2019</a>
+  </div>
+  <div class="archives">
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -186,9 +187,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -205,9 +206,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -224,9 +225,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -243,9 +244,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -262,9 +263,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -281,9 +282,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -300,9 +301,9 @@
     </header>
   </div>
 </article>
-  
     
-    
+
+
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
@@ -319,17 +320,17 @@
     </header>
   </div>
 </article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav" class="wow bounceIn"
     
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">下一页 &raquo;</a>
-  </nav>
+    
+  </div>
+</section>
 
+
+
+<nav id="page-nav" class="wow bounceIn">
+  
+  <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">下一页 &raquo;</a>
+</nav>
 
           
         </section>
@@ -452,9 +453,12 @@
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
-    $(window).load(function () {
+    $(document).ready(function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
+      setTimeout(() => {
+        $('#loader-wrapper').remove();
+      }, 2000)
     });
   </script>
   <!-- 来必力City版安装代码 -->
