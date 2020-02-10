@@ -109,79 +109,42 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-阿里云服务器初体验" class="wow bounceInLeft article article-type-post"
-  itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019-10-13/阿里云服务器初体验/" class="article-date">
-  <time datetime="2019-10-13T06:41:00.000Z" itemprop="datePublished">2019-10-13</time>
-</a>
-    
+          
+
+
+
+
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2020" class="archive-year">2020</a>
   </div>
-  <div class="article-inner">
+  <div class="archives">
     
-    
-    <header class="article-header">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020-02-10/Vue实现疫情地图/" class="archive-article-date">
+  <time datetime="2020-02-09T16:00:00.000Z" itemprop="datePublished">2月 10</time>
+</a>
       
   
-    <h1 class="article-title" itemprop="name">
-      阿里云服务器初体验
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020-02-10/Vue实现疫情地图/">Vue实现新冠病毒疫情地图</a>
     </h1>
   
 
     </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从用Hexo搭建了自己的博客网站后，时间长了发现这个静态博客维护起来还是很麻烦的，还有一些局限性。一直想有一个自己的服务器，用来搭建WordPress或者其他平台的博客，这样扩展的空间就更大了。这几天在阿里云申请了一个月的<a href="https://free.aliyun.com/?spm=5176.227096.7y9jhqsfz.56.b90b2604Kjaxe5" target="_blank" rel="noopener">免费试用</a>，打算先试下水，熟悉一下。</p>
-<a id="more"></a>
-
-<p><img src="/images/post/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E4%BD%93%E9%AA%8C/12.jpg" alt></p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>试用服务器配置是1核1G，1M带宽，外加40G系统盘。</p>
-<p>申请之后，填写好相关的信息提交后，就会收到阿里云发送的邮件，同时在阿里云控制台创建一个实例，即申请的服务器了。提供了内网和外网的IP地址。</p>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>因为没有玩过Linux内核的操作系统，所以最开始使用的是Windows Server 2012 R2操作系统。</p>
-<p>启动阿里云实例提供的远程连接，进入桌面后，看着和WIN 10没什么区别，第一次接触服务器，也不知道能够干什么，就尝试着搭建网站。在网上找到相关的教程后，打开服务器管理器安装好相关的IIS服务。然后在<code>管理工具</code>中打开<code>IIS工具</code>，里面已经提供了默认的一个站点，这个时候其实可以在浏览器中尝试访问了。如果还不行，有可能是阿里云安全组里没有开放对应的端口。如果要创建一个新的网站，可以参考<a href="https://blog.csdn.net/Simon798/article/details/92801368" target="_blank" rel="noopener">教程</a>。</p>
-<p>其实当时我并没有配置好，始终不能访问，似乎是文件的访问权限没有开，但是也没有尝试。体验了搭建网站的过程之后，感觉用阿里云提供的远程连接太卡了，就尝试着使用自己电脑自带的远程连接，<code>运行</code>中输入<code>mstsc</code>打开远程桌面连接，输入服务器的IP地址，然后填写凭据，连接上玩了一会儿，感觉流畅了很多。（配置远程桌面连接的时候同时要在服务器端开放远程连接的权限：<code>控制面板-》系统-》高级系统设置-》远程</code>）。</p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>一直听说Linux系统多么多么好，与Windows不一样，这次就来安装了一下。把服务器停机后，更换系统盘，选择了<code>Ubuntu</code>，远程连接之后，一入眼的界面就是终端。。。看到一脸懵，完全没想到就是这个样子，鉴于从来没接触过，对命令一无所知，找到教程后就安装了图形界面，毕竟我其实就是想看这个的。进入图形界面后，感觉Ubuntu的图形界面风格确实挺好看的，至于操作方式上。。也没什么明显的不同，个人感觉就像是Android和iOS的区别，大体相同，玩法不同。可能是刚刚接触，还没有发现吧。用了一会儿之后，不得不卸载图形界面，服务器配置太低了，图形界面完全不能操作，开个记事本都卡死。</p>
-<h3 id="宝塔"><a href="#宝塔" class="headerlink" title="宝塔"></a>宝塔</h3><p>再次换成CentOS，打算再装一下WordPress的镜像，结果看见了宝塔，就把宝塔装了。弄了一会儿宝塔后，发现可以直接对服务器上的文件进行管理，以及服务器端口的安全管控，还有服务器流量的图形化数据监测，最重要的是可以安装第三方工具进行扩展，里面就有WordPress。超级好用！</p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>这几天的服务器体验，让我对服务器这个东西的理解更深了点，其实真的就是一台二十四小时不停机的电脑而已。目前服务器对自己来说还没有什么大的用处，也就只能放个博客展示一下。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
-
-      
-    </footer>
   </div>
-  
-  
-<nav id="article-nav">
-  
-  <a href="/2019-10-10/NodeJs获取网页信息学习/" id="article-nav-older" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">NodeJs获取网页信息</div>
-  </a>
-  
-  
-  <a href="/2019-10-18/Nodejs实现接口请求/" id="article-nav-newer" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">
-      
-      Nodejs实现接口的请求
-      
-    </div>
-  </a>
-  
-</nav>
-
-  
 </article>
+    
+    
+  </div>
+</section>
 
 
-          
-          <div id="lv-container" class="commentModel" data-id="city" data-uid="MTAyMC80ODM2Ni8yNDg2MA=="></div>
+
           
         </section>
         
