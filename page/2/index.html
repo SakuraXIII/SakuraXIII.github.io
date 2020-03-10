@@ -501,43 +501,44 @@
   
 </nav>
     
-    <div class="live2d hidden-xs hidden-sm">
-      <link rel="stylesheet" href="/js/live2d/waifu.css">
-      <script src="/js/live2d/live2d.js"></script>
-      <script src="/js/live2d/waifu-tips.js"></script>
-      <!-- // live2d -->
-      <div class="waifu">
-        <div class="waifu-tips"></div>
-        <canvas id="live2d" class="live2d"></canvas>
-        <div class="waifu-tool">
-          <span class="fui-home"></span>
-          <span class="fui-chat"></span>
-          <span class="fui-eye"></span>
-          <span class="fui-user"></span>
-          <span class="fui-photo"></span>
-          <span class="fui-info-circle"></span>
-          <span class="fui-cross"></span>
+    <div id="not-mobile">
+      <div class="live2d hidden-xs hidden-sm">
+        <link rel="stylesheet" href="/js/live2d/waifu.css">
+        <script src="/js/live2d/live2d.js"></script>
+        <script src="/js/live2d/waifu-tips.js"></script>
+        <!-- // live2d -->
+        <div class="waifu">
+          <div class="waifu-tips"></div>
+          <canvas id="live2d" class="live2d"></canvas>
+          <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+          </div>
         </div>
-      </div>
-      <script type="text/javascript">
-        live2d_settings['modelId'] = 4;
-        live2d_settings['modelTexturesId'] = 87;
-        initModel("/js/live2d/waifu-tips.json")
-      </script>
-    </div>
-    <div class="player hidden-xs hidden-sm">
-      <!-- //网易云播放器 -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-      <div id="aplayer" class="aplayer" data-id="2127198653" data-server="netease" data-type="playlist"
-        data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
-      <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+        <script type="text/javascript">
+          live2d_settings['modelId'] = 4;
+          live2d_settings['modelTexturesId'] = 87;
+          initModel("/js/live2d/waifu-tips.json")
+        </script>
+        </div>
+        <div class="player hidden-xs hidden-sm">
+        <!-- //网易云播放器 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <div id="aplayer" class="aplayer" data-id="2127198653" data-server="netease" data-type="playlist"
+          data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+        <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+        </div>
     </div>
   </div>
   <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
-  <!-- <script src="/js/snow.js"></script> -->
   <script src="/js/style.js"></script>
   <script type="text/javascript">
     // 等待所有加载
@@ -548,20 +549,18 @@
         $('#loader-wrapper').remove();
       }, 2000)
     });
+
   </script>
   <!-- 来必力City版安装代码 -->
   <script type="text/javascript">
     (function (d, s) {
       var j, e = d.getElementsByTagName(s)[0];
-
       if (typeof LivereTower === 'function') {
         return;
       }
-
       j = d.createElement(s);
       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
       j.async = true;
-
       e.parentNode.insertBefore(j, e);
     })(document, 'script');
   </script>
