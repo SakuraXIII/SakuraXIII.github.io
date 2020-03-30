@@ -110,14 +110,14 @@
       <div class="outer">
         <section id="main">
           <article
-  id="post-博客搭建初步完成啦"
+  id="post-随机图片"
   class="wow bounceInLeft article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/2019-08-03/博客搭建初步完成啦/" class="article-date">
-  <time datetime="2019-08-03T09:04:47.000Z" itemprop="datePublished">2019-08-03</time>
+    <a href="/2020-03-29/随机图片/" class="article-date">
+  <time datetime="2020-03-29T05:24:00.000Z" itemprop="datePublished">2020-03-29</time>
 </a> 
   </div>
   <div class="article-inner">
@@ -126,7 +126,7 @@
       
   
     <h1 class="article-title" itemprop="name">
-      博客搭建初步完成
+      要来一张图片嘛？
     </h1>
   
  
@@ -143,36 +143,38 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <h2 id="博客v1-0版本完成"><a href="#博客v1-0版本完成" class="headerlink" title="博客v1.0版本完成"></a>博客v1.0版本完成</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本来是打算自己来重新写一个主题样式的，但是语法还不太熟悉，页面搭建起来比较困难QAQ。所以，最后决定把默认样式拷贝一份，在默认样式的基础上把写好的一部分内容融合进去。</p>
-<a id="more"></a>
+       <p>也许你也发现了博客背景是随机变化的了。</p>
+<p>之前在逛博客的时候，发现有些博客的图片是随机刷新的，本以为是在浏览器端实现的，自己尝试了一下，经过一番浪费时间的瞎折腾，终于还是失败了<a id="more"></a>，才想到通过服务端返回数据。后来又在某些大佬的博客中找到了他们提供的API，给谷歌浏览器，Typora，博客加上之后看着真是赏心悦目。于是就用了很久。</p>
+<p><img src="/images/pic/71.jpg" alt></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>终于在前段时间，一直在用的API还是失效了，需要联系<a href="https://acg.blue/" target="_blank" rel="noopener">大佬</a>加入白名单。换上备用的API😂后，意识到白嫖终究不是长久之计，决定自给自足。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>既然是服务端程序，自然就需要一个服务器，所幸之前参加了阿里云的活动，有一台服务器留着一直没用，这次就拿来用一下。即使没有服务器，用阿里云提供的函数计算服务也是可以的，根据这个程序实际上的请求量来看，一个月一块钱不到吧。其次我们需要的就是图片了，可以把图片放在图床，一开始我是把图片都放在服务器里的一个目录下，后来发现访问速度太慢了，就直接把图片存放在博客仓库的目录下，然后通过码云提供的 API 获取仓库数据。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这个程序主要是通过监听端口，得到请求地址后，获取图片列表，随机返回一张图片。我们可以通过返回图片所在的路径地址来减小发送的数据，降低服务器压力，提高效率，由于我们获取的图片是用来做背景图片的，所以更好的办法是直接重定向到图片地址，无需返回图片路径。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="1-读取目录获取图片"><a href="#1-读取目录获取图片" class="headerlink" title="1.读取目录获取图片"></a>1.读取目录获取图片</h4><p><code>fs.readdir(path[, options], callback)</code> ，该方法可以异步的读取目录的内容，回调函数接收 (err,files) 两个参数。<code>options</code> 可以指定 <code>encoding</code> 编码，默认 <code>utf8</code> 。通过这个方法，我们就可以得到所有的图片的名字。</p>
+<h4 id="2-码云API获取图片"><a href="#2-码云API获取图片" class="headerlink" title="2.码云API获取图片"></a>2.码云API获取图片</h4><p>实际上我是通过这种方法来获取图片的，无论是使用图床还是码云仓库，都是为了减轻个人服务器的压力，对我而言，实际是网速太慢╮(╯-╰)╭。但是图片的目录必须放在博客的分支下，这样才能够通过博客地址加相对路径访问到图片</p>
+<p>在<a href="https://gitee.com/api/v5/swagger#/getV5ReposOwnerRepoStargazers?ex=no" target="_blank" rel="noopener">码云API</a>中，<code>仓库</code> 下有 <code>获取仓库具体路径下的内容</code> 这个API，使用前我们需要获取 <code>AccessToken</code> ，但是只有一天有效期，需要通过回调函数重新获取，具体的可以看文档。这种方法如此麻烦，主要是用于第三方应用的。在个人账号的 <code>设置</code> 中可以发现一个 <code>私人令牌</code> 的选项，我们可以申请一个新令牌，设置好权限，最终就会生成一个 <code>Token</code> ，这种方法更适用于个人开发。 <em><code>API格式：(https://gitee.com/api/v5/repos/{仓库所属空间地址}/{repoName}/contents/{dirPath}?access_token={Token}&amp;ref={?branchName})</code></em> 。通过 <code>http.request</code> GET请求后会返回一系列字段， <code>path</code> 才是我们需要的图片相对仓库的路径。如果存放的图片很多，就需要进行字符拼接了(否则数据显示不全)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> req = https.request(url, res =&gt; &#123;</span><br><span class="line">  res.setEncoding(<span class="string">"utf8"</span>);</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">""</span>;</span><br><span class="line">  res.on(<span class="string">"data"</span>, d =&gt; &#123;</span><br><span class="line">    data += d; <span class="comment">// 进行数据拼接</span></span><br><span class="line">  &#125;);</span><br><span class="line">  res.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">req.on(<span class="string">"error"</span>, e =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(e);</span><br><span class="line">&#125;);</span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure>
 
-<p>在经过一番修改后，最终就变成了现在的这个样子，但是发现文章中引入的图片的路径始终有问题，百度了很久，插件也装了，始终加载不出来，所以在解决这个问题之前，前面的教程里的图片就没办法看到了。（已解决）</p>
-<p>之前和朋友提过Github Pages，朋友说网速超级慢，后面在用默认主题时也没有遇到明显的加载缓慢问题，然而今天将页面部署到Github上后，进入博客才发现真的超级慢。于是将这个博客部署到<a href="https://gitee.com/Tonyteachers/Tonyteachers" target="_blank" rel="noopener">码云</a>上。</p>
+<h4 id="3-重定向"><a href="#3-重定向" class="headerlink" title="3.重定向"></a>3.重定向</h4><p>最后我们只需要将博客地址拼接上获取的随机图片的相对路径，这就是重定向后的URL地址。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.writeHead(<span class="number">302</span>, &#123;</span><br><span class="line">  Location: <span class="string">"https://yourblog.gitee.io/"</span> + &#123;imgPath&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-优化"><a href="#4-优化" class="headerlink" title="4.优化"></a>4.优化</h4><p>为了提高效率，减少请求API的次数，我们可以将码云返回的数据存到一个全局数组中，每次直接从数组中获取图片路径。隔一段时间再去更新。</p>
+<p>代码地址：<a href="https://gitee.com/Tonyteachers/randomPic.git" target="_blank" rel="noopener">https://gitee.com/Tonyteachers/randomPic.git</a></p>
  
     </div>
     <footer class="article-footer">
        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二次元/">二次元</a></li></ul>
  
     </footer>
   </div>
    
 <nav id="article-nav">
   
-  <a href="/2019-07-27/个人blog搭建/" id="article-nav-older" class="article-nav-link-wrap">
+  <a href="/2020-03-01/关于一段ES6代码的探讨/" id="article-nav-older" class="article-nav-link-wrap">
     <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">基于Hexo框架的个人blog搭建</div>
+    <div class="article-nav-title">关于一段ES6代码的探讨</div>
   </a>
   
-  
-  <a href="/2019-08-08/博客更新日志/" id="article-nav-newer" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">
-      
-      博客更新日志
-      
-    </div>
-  </a>
   
 </nav>
  

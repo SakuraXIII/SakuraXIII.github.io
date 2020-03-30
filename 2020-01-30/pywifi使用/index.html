@@ -109,17 +109,19 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-pywifi使用" class="wow bounceInLeft article article-type-post"
-  itemscope itemprop="blogPost">
+          <article
+  id="post-pywifi使用"
+  class="wow bounceInLeft article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
   <div class="article-meta">
     <a href="/2020-01-30/pywifi使用/" class="article-date">
   <time datetime="2020-01-29T16:00:00.000Z" itemprop="datePublished">2020-01-30</time>
-</a>
-    
+</a> 
   </div>
   <div class="article-inner">
-    
-    
+     
     <header class="article-header">
       
   
@@ -127,12 +129,21 @@
       pywifi使用
     </h1>
   
-
+ 
+      <div class="subtitle">
+        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
+      </div>
+      <script>
+        $(function() {
+          var total = document.querySelector(".article-entry").innerText.length;
+          document.querySelector(".subtitle p span").innerText = total;
+        });
+      </script>
+      
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>pywifi的<a href="https://github.com/awkman/pywifi/blob/master/DOC.md" target="_blank" rel="noopener">github</a>地址，<a href="https://pypi.org/project/pywifi/" target="_blank" rel="noopener">PyPI</a>平台地址。</p>
+       <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>pywifi的<a href="https://github.com/awkman/pywifi/blob/master/DOC.md" target="_blank" rel="noopener">github</a>地址，<a href="https://pypi.org/project/pywifi/" target="_blank" rel="noopener">PyPI</a>平台地址。</p>
 <p>这是一个可以用来操纵设备无线网卡的python库，一开始发现这个库的时候想着写个破解wifi的程序，通过暴力破解的方式获取wifi密码。对这个库进一步了解后发现实际是不行的，效率太低了，使用多线程或许可以。</p>
 <a id="more"></a>
 
@@ -156,19 +167,15 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">displayAPs</span><span class="params">(profile)</span>:</span></span><br><span class="line">    print(<span class="string">'获取到%d个信号:'</span> % (len(profile)))</span><br><span class="line">    print(<span class="string">"%-3s %-19s %-19s %s"</span> </span><br><span class="line">          % (<span class="string">'序号'</span>, <span class="string">'ssid'</span>, <span class="string">'MAC地址'</span>, <span class="string">'加密方式'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> profile:</span><br><span class="line">        print(<span class="string">"|%-4s|%-20s|%-20s|%s"</span></span><br><span class="line">              % (profile.index(i) + <span class="number">1</span>, i.ssid, i.bssid, </span><br><span class="line">                 <span class="string">'WPA2PSK'</span> <span class="keyword">if</span> i.akm[<span class="number">0</span>] == const.AKM_TYPE_WPA2PSK <span class="keyword">else</span> <span class="string">'其他'</span>))</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/post/pywifi/result.png" alt="result"></p>
-
-      
+ 
     </div>
     <footer class="article-footer">
-      
-      
+       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-      
+ 
     </footer>
   </div>
-  
-  
+   
 <nav id="article-nav">
   
   <a href="/2020-01-22/回顾2019及博客的更新日志/" id="article-nav-older" class="article-nav-link-wrap">
@@ -187,9 +194,9 @@
   </a>
   
 </nav>
-
-  
+ 
 </article>
+
 
 
           
@@ -206,7 +213,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二次元/">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
   </div>
 
@@ -229,6 +236,10 @@
       <ul>
         
           <li>
+            <a href="/2020-03-29/随机图片/">要来一张图片嘛？</a>
+          </li>
+        
+          <li>
             <a href="/2020-03-01/关于一段ES6代码的探讨/">关于一段ES6代码的探讨</a>
           </li>
         
@@ -242,10 +253,6 @@
         
           <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
           </li>
         
       </ul>

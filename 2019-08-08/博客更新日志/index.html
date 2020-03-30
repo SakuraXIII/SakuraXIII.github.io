@@ -109,17 +109,19 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-博客更新日志" class="wow bounceInLeft article article-type-post"
-  itemscope itemprop="blogPost">
+          <article
+  id="post-博客更新日志"
+  class="wow bounceInLeft article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
   <div class="article-meta">
     <a href="/2019-08-08/博客更新日志/" class="article-date">
   <time datetime="2019-08-08T02:12:20.000Z" itemprop="datePublished">2019-08-08</time>
-</a>
-    
+</a> 
   </div>
   <div class="article-inner">
-    
-    
+     
     <header class="article-header">
       
   
@@ -127,12 +129,21 @@
       博客更新日志
     </h1>
   
-
+ 
+      <div class="subtitle">
+        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
+      </div>
+      <script>
+        $(function() {
+          var total = document.querySelector(".article-entry").innerText.length;
+          document.querySelector(".subtitle p span").innerText = total;
+        });
+      </script>
+      
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>刚开始接触这东西真的难搞，遇到了很多的问题，每天都在拆东墙补西墙，又或者是去大佬的博客转转，向大佬学习一点东西过来。</p>
+       <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>刚开始接触这东西真的难搞，遇到了很多的问题，每天都在拆东墙补西墙，又或者是去大佬的博客转转，向大佬学习一点东西过来。</p>
 <a id="more"></a>
 
 <h3 id="网站名字样式修改"><a href="#网站名字样式修改" class="headerlink" title="网站名字样式修改"></a>网站名字样式修改</h3><p>前几天突然发现网站头像下面的名字在大屏幕下居然显示的很小，查了一下发现是被默认重置样式覆盖掉了。。。</p>
@@ -140,19 +151,15 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> <span class="comment">/*滚动条整体部分*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span>  <span class="comment">/*滚动条里面的小方块，能上下左右移动（取决于是垂直滚动条还是水平滚动条）*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span>  <span class="comment">/*滚动条的轨道*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-button</span> <span class="comment">/*滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track-piece</span> <span class="comment">/*内层轨道，滚动条中间部分（除去）*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-corner</span> <span class="comment">/*边角，即两个滚动条的交汇处*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-resizer</span> <span class="comment">/*两个滚动条的交汇处上用于通过拖动调整元素大小的小控件*/</span></span><br></pre></td></tr></table></figure>
 
 <p>在进行测试预览的时候，发现滚动条的样式只有在谷歌浏览器上才有用，IE，Edge上都看不到效果。</p>
-
-      
+ 
     </div>
     <footer class="article-footer">
-      
-      
+       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-      
+ 
     </footer>
   </div>
-  
-  
+   
 <nav id="article-nav">
   
   <a href="/2019-08-03/博客搭建初步完成啦/" id="article-nav-older" class="article-nav-link-wrap">
@@ -171,9 +178,9 @@
   </a>
   
 </nav>
-
-  
+ 
 </article>
+
 
 
           
@@ -190,7 +197,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二次元/">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
   </div>
 
@@ -213,6 +220,10 @@
       <ul>
         
           <li>
+            <a href="/2020-03-29/随机图片/">要来一张图片嘛？</a>
+          </li>
+        
+          <li>
             <a href="/2020-03-01/关于一段ES6代码的探讨/">关于一段ES6代码的探讨</a>
           </li>
         
@@ -226,10 +237,6 @@
         
           <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
           </li>
         
       </ul>

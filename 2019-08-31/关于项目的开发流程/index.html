@@ -109,17 +109,19 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-关于项目的开发流程" class="wow bounceInLeft article article-type-post"
-  itemscope itemprop="blogPost">
+          <article
+  id="post-关于项目的开发流程"
+  class="wow bounceInLeft article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
   <div class="article-meta">
     <a href="/2019-08-31/关于项目的开发流程/" class="article-date">
   <time datetime="2019-08-31T10:11:18.000Z" itemprop="datePublished">2019-08-31</time>
-</a>
-    
+</a> 
   </div>
   <div class="article-inner">
-    
-    
+     
     <header class="article-header">
       
   
@@ -127,12 +129,21 @@
       关于项目的开发流程
     </h1>
   
-
+ 
+      <div class="subtitle">
+        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
+      </div>
+      <script>
+        $(function() {
+          var total = document.querySelector(".article-entry").innerText.length;
+          document.querySelector(".subtitle p span").innerText = total;
+        });
+      </script>
+      
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      <p>11天的时间，终于，接触的第一个项目完成了，虽然是很简单的网站重写，但是也一下子学到了很多的东西。一开始的只知道需要写页面，现在了解了前后分离式项目模式中前端需要完成的一些任务。这里记录一下完成这个项目后所了解到的东西。</p>
+       <p>11天的时间，终于，接触的第一个项目完成了，虽然是很简单的网站重写，但是也一下子学到了很多的东西。一开始的只知道需要写页面，现在了解了前后分离式项目模式中前端需要完成的一些任务。这里记录一下完成这个项目后所了解到的东西。</p>
 <a id="more"></a>
 
 <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>一个项目的开始，首先应该是前后端人员分析项目需要实现的功能，通过协商交流以确定接口的功能及请求参数，返回数据等其他问题。就我这次所完成的项目的情况而言，只是进行翻新，使用bootstrap+art-template。所以难度上来说不高。</p>
@@ -169,19 +180,15 @@
 </li>
 </ul>
 <p>以上就是实现动态加载路径导航的方法，经过测试，一般情况下，还是没有问题的，但是如果从地址栏输入中间的某一级的地址直接进入，仍然不行。所以严格来说，这个功能还是没有实现。我还没有发现能让其自行得到页面层次结构的方法。</p>
-
-      
+ 
     </div>
     <footer class="article-footer">
-      
-      
+       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
-
-      
+ 
     </footer>
   </div>
-  
-  
+   
 <nav id="article-nav">
   
   <a href="/2019-08-08/博客更新日志/" id="article-nav-older" class="article-nav-link-wrap">
@@ -200,9 +207,9 @@
   </a>
   
 </nav>
-
-  
+ 
 </article>
+
 
 
           
@@ -219,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二次元/">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
   </div>
 
@@ -242,6 +249,10 @@
       <ul>
         
           <li>
+            <a href="/2020-03-29/随机图片/">要来一张图片嘛？</a>
+          </li>
+        
+          <li>
             <a href="/2020-03-01/关于一段ES6代码的探讨/">关于一段ES6代码的探讨</a>
           </li>
         
@@ -255,10 +266,6 @@
         
           <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
           </li>
         
       </ul>

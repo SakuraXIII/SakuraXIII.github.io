@@ -109,17 +109,19 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article id="post-exceljs的使用（二）" class="wow bounceInLeft article article-type-post"
-  itemscope itemprop="blogPost">
+          <article
+  id="post-exceljs的使用（二）"
+  class="wow bounceInLeft article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
   <div class="article-meta">
     <a href="/2019-11-09/exceljs的使用（二）/" class="article-date">
   <time datetime="2019-11-08T16:06:00.000Z" itemprop="datePublished">2019-11-09</time>
-</a>
-    
+</a> 
   </div>
   <div class="article-inner">
-    
-    
+     
     <header class="article-header">
       
   
@@ -127,12 +129,21 @@
       exceljs操作Excel（二）
     </h1>
   
-
+ 
+      <div class="subtitle">
+        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
+      </div>
+      <script>
+        $(function() {
+          var total = document.querySelector(".article-entry").innerText.length;
+          document.querySelector(".subtitle p span").innerText = total;
+        });
+      </script>
+      
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-      <h2 id="脚本的实现"><a href="#脚本的实现" class="headerlink" title="脚本的实现"></a>脚本的实现</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>读取目标文件，提取出每条数据的编号和地点，再向百度地图请求指定地点，获取到经纬度，然后写入另一个文件中。所以，需要获取的信息有：编号，地名；请求后要写入的信息有 ：编号，经度，纬度，模糊数据的标记值。</p>
+       <h2 id="脚本的实现"><a href="#脚本的实现" class="headerlink" title="脚本的实现"></a>脚本的实现</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>读取目标文件，提取出每条数据的编号和地点，再向百度地图请求指定地点，获取到经纬度，然后写入另一个文件中。所以，需要获取的信息有：编号，地名；请求后要写入的信息有 ：编号，经度，纬度，模糊数据的标记值。</p>
 <a id="more"></a>
 
 <h3 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h3><p>遍历读取文件，将关键数据作为一个对象<code>addr</code>，遍历每一条数据，添加进一个数组<code>address</code>中，遍历数组，调用百度地图API请求经纬度，将获取的信息再存储为一个对象<code>table</code>，并添加到另一个数组<code>arr</code>中，最后遍历数组，写入文件中。</p>
@@ -155,19 +166,15 @@
 
 <hr>
 <p>到这里，程序的大致结构就完成了，但是仍然还有需要注意的几个地方，关系到回调函数的使用以及arr.push方法和对象之间的关系。需要另写一篇笔记记录。</p>
-
-      
+ 
     </div>
     <footer class="article-footer">
-      
-      
+       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-      
+ 
     </footer>
   </div>
-  
-  
+   
 <nav id="article-nav">
   
   <a href="/2019-11-08/exceljs的使用（一）/" id="article-nav-older" class="article-nav-link-wrap">
@@ -186,9 +193,9 @@
   </a>
   
 </nav>
-
-  
+ 
 </article>
+
 
 
           
@@ -205,7 +212,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二次元/">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
   </div>
 
@@ -228,6 +235,10 @@
       <ul>
         
           <li>
+            <a href="/2020-03-29/随机图片/">要来一张图片嘛？</a>
+          </li>
+        
+          <li>
             <a href="/2020-03-01/关于一段ES6代码的探讨/">关于一段ES6代码的探讨</a>
           </li>
         
@@ -241,10 +252,6 @@
         
           <li>
             <a href="/2020-01-22/回顾2019及博客的更新日志/">回顾2019及博客的更新日志</a>
-          </li>
-        
-          <li>
-            <a href="/2019-11-14/博客全面更新/">博客全面更新及教程</a>
           </li>
         
       </ul>

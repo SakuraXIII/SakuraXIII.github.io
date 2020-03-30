@@ -65,7 +65,8 @@ $(function() {
   $("article:odd").addClass("bounceInRight"); //添加自右向左的出场动画
 
   // 如果不是移动端则显示live2d和player
-  if (window.screen.width > 768) {
+  if (window.screen.width < 768) {
     $("#not-mobile").remove('#not-mobile')
   }
+  
 });

@@ -350,6 +350,7 @@ body {
   text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;
+  margin: 0 0 5px 0;
   color: #555;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
@@ -414,7 +415,7 @@ a.article-title:hover {
 .article-entry img,
 .article-entry video {
   max-width: 100%;
-  height: auto;
+  max-height: 400px;
   display: block;
   margin: auto;
 }
@@ -1126,7 +1127,7 @@ ol {
 .top-banner .md {
   height: 380px;
   margin-top: 50px;
-  background-image: url("/images/33.jpg");
+  background-image: url("/images/59.png");
 }
 .top-banner .other {
   margin-top: 50px;
