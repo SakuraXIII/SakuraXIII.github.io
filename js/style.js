@@ -1,7 +1,7 @@
 //监测浏览器tab标签页的切换
-$(function() {
+$(function () {
   //添加页面可见性改变事件，实时监测页面变化
-  document.addEventListener("visibilitychange", function() {
+  document.addEventListener("visibilitychange", function () {
     if (document.visibilityState == "hidden") {
       document.title = "你要离开了嘛-∑(❍ฺд❍ฺlll) ";
     } else {
@@ -11,10 +11,10 @@ $(function() {
 
   //一言
   fetch("https://v1.hitokoto.cn")
-    .then(function(res) {
+    .then(function (res) {
       return res.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       var hitokoto = document.getElementsByClassName("hitokoto");
       var strong = document.getElementsByTagName("strong");
       for (var i = 0; i < hitokoto.length; i++) {
@@ -22,7 +22,7 @@ $(function() {
         strong[i].innerText = "--" + data.from;
       }
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.error(err);
     });
 
@@ -52,21 +52,28 @@ $(function() {
   |________|________/\______/ \______/ 
 `);
 
-
   // wow.js
   var wow = new WOW({
     boxClass: "wow", // default
     animateClass: "animated", // default
     offset: 50, // default
     mobile: false, // default
-    live: true // default
+    live: true, // default
   });
   wow.init();
   $("article:odd").addClass("bounceInRight"); //添加自右向左的出场动画
 
   // 如果不是移动端则显示live2d和player
   if (window.screen.width < 768) {
-    $("#not-mobile").remove('#not-mobile')
+    $("#not-mobile").remove("#not-mobile");
   }
-  
+  let date = (new Date().getMonth() + 1).toString() + "月" + new Date().getDate().toString() + "日";
+  console.log(date);
+  if(date === '4月4日') {
+    $('html').css('filter','grayscale(100%)')
+    setTimeout(function(){
+          $('.hitokoto').text('悼念离我们而去的同胞们')
+          $('.hitokoto-text strong').text('-- 博主')
+    },1000)
+  }
 });
