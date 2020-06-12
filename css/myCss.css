@@ -68,6 +68,10 @@ blockquote::before {
 }
 
 /* 文章中的列表(代码块) */
+.article-entry ul, .article-entry ol, .article-entry dl{
+  margin: 0;
+}
+
 .article-entry ul li {
   margin-left: 2em;
 }

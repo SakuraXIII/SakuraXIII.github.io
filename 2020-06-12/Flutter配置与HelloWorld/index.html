@@ -109,42 +109,85 @@
 </header>
       <div class="outer">
         <section id="main">
-          
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2019" class="archive-year">2019</a>
+          <article
+  id="post-Flutter配置与HelloWorld"
+  class="wow bounceInLeft article article-type-post"
+  itemscope
+  itemprop="blogPost"
+>
+  <div class="article-meta">
+    <a href="/2020-06-12/Flutter配置与HelloWorld/" class="article-date">
+  <time datetime="2020-06-12T07:13:00.000Z" itemprop="datePublished">2020-06-12</time>
+</a> 
   </div>
-  <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019-09-19/Gridea客户端管理博客/" class="archive-article-date">
-  <time datetime="2019-09-19T08:59:33.000Z" itemprop="datePublished">9月 19</time>
-</a>
+  <div class="article-inner">
+     
+    <header class="article-header">
       
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019-09-19/Gridea客户端管理博客/">Gridea客户端管理博客</a>
+    <h1 class="article-title" itemprop="name">
+      Flutter 配置与HelloWorld
     </h1>
   
-
+ 
+      <div class="subtitle">
+        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
+      </div>
+      <script>
+        $(function() {
+          var total = document.querySelector(".article-entry").innerText.length;
+          document.querySelector(".subtitle p span").innerText = total;
+        });
+      </script>
+      
     </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <p>首先，Flutter真**难用，配置麻烦，Dart 也是极其反人类。花了三天时间终于跑起来了个 <code>Hello World</code> 。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>先来扯一点众所周知的概念： <code>Flutter 是 Google 开源的 UI 工具包，帮助开发者通过一套代码库高效构建多平台精美应用，支持移动、Web、桌面和嵌入式平台。</code> 由此可以确定，Flutter 是一套以 dart 语言为主的跨平台的<strong>框架</strong>，经过初步尝试，对于前端来说还是不错的。</p>
+<a id="more"></a>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="安装-Android"><a href="#安装-Android" class="headerlink" title="安装 Android"></a>安装 Android</h3><p>Flutter 一般是用于构建移动设备的应用程序，以 Android 应用为主，我们需要准备Android 的相关开发工具包：</p>
+<ul>
+<li>SDK-Tools  开发包的管理工具，以下工具需要放入该文件夹</li>
+<li>SDK  软件开发包</li>
+<li>System-images  虚拟机的系统镜像</li>
+<li>platform-Tools  平台相关工具</li>
+<li>Build Tools 构建工具</li>
+<li>SDK Extras 扩展工具</li>
+<li>Android studio  开发工具，Google 自家的IDE</li>
+</ul>
+<p>由于国内众所周知的原因，没有好的身手下载就会变得很困难。这里找到了一个国内的 Android 社区 <a href="https://www.androiddevtools.cn/" target="_blank" rel="noopener">https://www.androiddevtools.cn/</a> ，通过百度网盘下载，但是仍然会有个别工具链接指向Google官方的，所以仍然会墙，经过大神网友指点，获取到下载链接后用迅雷下载，亲测可用，速度不错。</p>
+<h3 id="安装-Flutter"><a href="#安装-Flutter" class="headerlink" title="安装 Flutter"></a>安装 Flutter</h3><p>Android 同时需要 Java 的运行环境，所以也需要下载 Java 的 JDK ，同时配置环境变量啥的。这里主要以 Flutter 为主，参照 <a href="https://flutterchina.club/setup-windows/" target="_blank" rel="noopener">Flutter 中文网的描述</a> ，下载了 Flutter SDK 后，将 bin 目录配置到环境变量下，再配置镜像源。不推荐将 Flutter 放在高权限目录下，同时无需另外再安装 Dart 语言，Flutter 内置了<del>阉割</del> 定制版的 Dart ，单独安装会导致版本不对应，反而有问题。</p>
+<h4 id="在-Android-studio中配置-Flutter"><a href="#在-Android-studio中配置-Flutter" class="headerlink" title="在 Android studio中配置 Flutter"></a>在 Android studio中配置 Flutter</h4><p> <code>Android studio</code> 安装完成后，在 <code>file</code>-&gt; <code>setting</code> -&gt; <code>plugin</code> 中搜索 <code>Flutter</code> 及 <code>Dart</code> 插件。然后我们在控制台运行  <code>flutter doctor --android-licenses</code> 获取 Android 授权即可，但有可能在这一步出错，原因可能是Android SDK 下 tools 文件夹内容不完整，可以参考这篇文章 <a href="https://www.jianshu.com/p/757550a3f3eb" target="_blank" rel="noopener">https://www.jianshu.com/p/757550a3f3eb</a> 。到了这里，基本就配置完全了。可以通过 <code>flutter doctor</code> 检测是否配置正确，然后我们就可以通过编译器或命令行 <code>flutter create &lt;name&gt;</code> 创建一个Flutter 项目了。</p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>在生成的项目树中，我们的工作代码文件在 <code>lib</code> 下，在 <code>main.dart</code> 中按照中文网的样例代码照着抄一遍。dart的代码严格要求语句结尾要有 <code>;</code> ，相信尝试了它的语法后，宁也会和我一样，觉得语法极其繁琐😁，嵌套极为严重，代码重复度高。</p>
+<h3 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h3><p>完成代码基本结构，连接上真机或虚拟机后，我们就可以开始跑起来了，命令行 <code>flutter run</code> 启动项目。在这里，我们可能会在构建 apk 的时候失败，根据网上的解释，可能是由于网络的原因，需要修改 <code>Android</code> 目录下 <code>Grandle</code> 中的配置，设置镜像源。但据说这个问题在1.0x版本后被解决了，并且我也确实不是这个问题，我的解决办法是将 C盘用户目录下的 <code>.grandle</code> 文件删除了再 <code>flutter clean</code> 删除配置文件后重新构建。</p>
+<p>到了这里，一切无碍的话，我们终于可以开始Flutter 的学习之路了。</p>
+ 
+    </div>
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+ 
+    </footer>
   </div>
+   
+<nav id="article-nav">
+  
+  <a href="/2020-04-12/Termux初体验/" id="article-nav-older" class="article-nav-link-wrap">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">Termux初体验</div>
+  </a>
+  
+  
+</nav>
+ 
 </article>
-    
-    
-  </div>
-</section>
 
 
 
+          
+          <div id="lv-container" class="commentModel" data-id="city" data-uid="MTAyMC80ODM2Ni8yNDg2MA=="></div>
           
         </section>
         
