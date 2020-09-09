@@ -109,97 +109,47 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article
-  id="post-exceljs的使用（三）"
-  class="wow bounceInLeft article article-type-post"
-  itemscope
-  itemprop="blogPost"
->
-  <div class="article-meta">
-    <a href="/2019-11-09/exceljs的使用（三）/" class="article-date">
-  <time datetime="2019-11-09T06:54:00.000Z" itemprop="datePublished">2019-11-09</time>
-</a> 
+          
+
+
+
+
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2019" class="archive-year">2019</a>
   </div>
-  <div class="article-inner">
-     
-    <header class="article-header">
+  <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019-07-27/个人blog搭建/" class="archive-article-date">
+  <time datetime="2019-07-27T08:54:23.000Z" itemprop="datePublished">7月 27</time>
+</a>
       
   
-    <h1 class="article-title" itemprop="name">
-      exceljs操作Excel（三）
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019-07-27/个人blog搭建/">基于Hexo框架的个人blog搭建</a>
     </h1>
   
- 
-      <div class="subtitle">
-        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
-      </div>
-      <script>
-        $(function() {
-          var total = document.querySelector(".article-entry").innerText.length;
-          document.querySelector(".subtitle p span").innerText = total;
-        });
-      </script>
-      
+
     </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <h2 id="问题及处理"><a href="#问题及处理" class="headerlink" title="问题及处理"></a>问题及处理</h2><h4 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h4><p>在最初的代码中，我的执行流程是在读取文件遍历每条信息时就写入对象<code>table</code>中，同时立即请求API，将获取的经纬度写入对象中，push进数组<code>arr</code>，最后打印数组。</p>
-<a id="more"></a>
-
-<h5 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h5><p>结果发现只要执行文件就会报错，显示请求路径包含为转义的字符，这是URL编码的问题，在浏览器地址栏中输入中文，浏览器会帮我们把中文编码为utf-8。所以这里我们要将每次生成的请求URL进行编码。这里有两种编码函数<code>encodeURI()</code>,<code>encodeURIComponent()</code></p>
-<p>这两个方法有一点区别，这里引用<a href="https://www.jianshu.com/p/67508d824af1" target="_blank" rel="noopener">大佬博客</a>的解释：</p>
-<blockquote>
-<p>encodeURI()是Javascript中真正用来对URL编码的函数。</p>
-<p>encodeURIComponent()对URL的组成部分（如查询参数、路径等）进行个别编码，而不用于对整个URL进行编码。</p>
-<p>encodeURIComponent比encodeURI编码的范围更大，即 <code>@ # $ &amp; = : / , ; ? +</code>，这些在encodeURI()中不被编码的符号，在encodeURIComponent()中统统会被编码</p>
-<p>如果只是编码字符串，不和URL有半毛钱关系，那么用escape。当然该方法已经不推荐使用，所以不用深究</p>
-<p>encodeURI用于编码整个URL</p>
-<p>encodeURIComponent用于编码url中的查询参数或路径等（若参数为url,还是相当于参数，用<code>encodeURIComponent()</code>）</p>
-</blockquote>
-<p>为了方便，我就用<code>encodeURI()</code>编码，于是，这个小问题就解决了。</p>
-<h5 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h5><p>最主要的问题来了。。无论如何，最后输出的数组的每个对象的经纬度都是空的，测试后发现每次都是先输出数组，再输出请求API返回的数据，我才知道request方法是异步操作的，所以就用上了回调函数。然而，数据还是没有，这个查了很久之后，才发现是数据类型的问题：返回的数据是字符类型，而我是通过<code>对象.属性</code>的方式获取的，使用<code>body=JSON.parse(body)</code>解析成对象即可。</p>
-<h5 id="arr-push"><a href="#arr-push" class="headerlink" title="arr.push()"></a>arr.push()</h5><p>在将对象<code>table</code>添加进数组后，打印在控制台，结果发现数组中所有的对象都是相同的。当时错误的代码大致如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> table = &#123;</span><br><span class="line">id: <span class="string">''</span>,</span><br><span class="line">lat: <span class="string">''</span>,</span><br><span class="line">lng: <span class="string">''</span>,</span><br><span class="line">status: <span class="string">''</span></span><br><span class="line">&#125; <span class="comment">//全局变量</span></span><br><span class="line"><span class="comment">//读取文件</span></span><br><span class="line">workbook.xlsx.readFile(requFile).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> worksheet = workbook.getWorksheet(<span class="number">1</span>); <span class="comment">//获取第一个worksheet</span></span><br><span class="line">worksheet.eachRow(<span class="function"><span class="keyword">function</span> (<span class="params">row, rowNumber</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (rowNumber &gt; <span class="number">773</span> &amp;&amp; rowNumber &lt; <span class="number">1000</span>) &#123;</span><br><span class="line">table.id = worksheet.getCell(<span class="string">`A<span class="subst">$&#123;rowNumber&#125;</span>`</span>).text.trim()</span><br><span class="line">table.addr = worksheet.getCell(<span class="string">`B<span class="subst">$&#123;rowNumber&#125;</span>`</span>).text.trim()</span><br><span class="line">arr.push(table)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一开始不知道原因，做了尝试后，只知道需要在循环内部给对象进行初始化，在全局范围只需要声明一个空的对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> table = &#123;&#125;</span><br><span class="line">workbook.xlsx.readFile(requFile).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> worksheet = workbook.getWorksheet(<span class="number">1</span>); <span class="comment">//获取第一个worksheet</span></span><br><span class="line">worksheet.eachRow(<span class="function"><span class="keyword">function</span> (<span class="params">row, rowNumber</span>) </span>&#123;</span><br><span class="line">table = &#123;</span><br><span class="line">id: <span class="string">''</span>,</span><br><span class="line">lat: <span class="string">''</span>,</span><br><span class="line">lng: <span class="string">''</span>,</span><br><span class="line">status: <span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (rowNumber &gt; <span class="number">773</span> &amp;&amp; rowNumber &lt; <span class="number">1000</span>) &#123;</span><br><span class="line">table.id = worksheet.getCell(<span class="string">`A<span class="subst">$&#123;rowNumber&#125;</span>`</span>).text.trim()</span><br><span class="line">table.addr = worksheet.getCell(<span class="string">`B<span class="subst">$&#123;rowNumber&#125;</span>`</span>).text.trim()</span><br><span class="line">arr.push(table)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>后来猜想数组中的每个对象其实都是同一个对象，写了一个demo验证了这种猜想，但是不知道原理，只能先用着。后来目标实现后，专门去查了一下，原因是引用数据类型和基本数据类型在内存中的存储方式的不同。这需要专门来介绍。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之，这次为了解决繁琐重复的人工操作而实现的程序对我而言还是相当有挑战的，花了两天三夜的时间，一度怀疑自己的编程能力，想要放弃，但是一想到那上千条数据，不得不继续写下去。也确实意识到在js基础上的一些问题，越深入了解越觉得有意思。</p>
- 
-    </div>
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
- 
-    </footer>
   </div>
-   
-<nav id="article-nav">
-  
-  <a href="/2019-11-09/exceljs的使用（二）/" id="article-nav-older" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">exceljs操作Excel（二）</div>
-  </a>
-  
-  
-  <a href="/2019-11-10/js中的引用类型/" id="article-nav-newer" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">
-      
-      js中的引用类型
-      
-    </div>
-  </a>
-  
-</nav>
- 
 </article>
+    
+    
+  </div>
+</section>
 
 
 
-          
-          <div id="lv-container" class="commentModel" data-id="city" data-uid="MTAyMC80ODM2Ni8yNDg2MA=="></div>
+<nav id="page-nav" class="wow bounceIn">
+  
+  <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; 上一页</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
+</nav>
+
           
         </section>
         
