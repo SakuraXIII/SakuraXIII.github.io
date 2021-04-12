@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>二刺螈小破站</title>
   
-  <link rel="alternate" href="/atom.xml" title="小贱客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
   
   
   <link rel="shortcut icon" href="/images/favicon.png"> 
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1317659_91ay27oeya8.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="/css/loader.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/myCss.css">
-</head></html>
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1317659_91ay27oeya8.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+  
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/myCss.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
   <div id="container" class="container-fluid">
@@ -90,8 +106,8 @@
       <div class="ban-title mdtitle">
         <h1>er刺螈</h1>
         <p>Welcome to my personal site</p>
-        <a href="https://github.com/SakuraXIII/SakuraXIII.github.io" class="iconfont icongithub"></a>
-        <a href="https://www.zhihu.com/people/an-ye-yong-heng-45/activities" class="iconfont iconzhihu1"></a>
+        <a href="https://github.com/SakuraXIII/SakuraXIII.github.io" target="_blank" rel="noopener" class="iconfont icongithub"></a>
+        <a href="https://www.zhihu.com/people/an-ye-yong-heng-45/activities" target="_blank" rel="noopener" class="iconfont iconzhihu1"></a>
         <div class="hitokoto-text">
           <p class="hitokoto"></p><strong></strong>
         </div>
@@ -116,9 +132,13 @@
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/2020-03-29/随机图片/" class="article-date">
+    <a href="/2020-03-29/%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87/" class="article-date">
   <time datetime="2020-03-29T05:24:00.000Z" itemprop="datePublished">2020-03-29</time>
 </a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a>
+  </div>
+
   </div>
   <div class="article-inner">
      
@@ -143,40 +163,44 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <p>也许你也发现了博客背景是随机变化的了。</p>
-<p>之前在逛博客的时候，发现有些博客的图片是随机刷新的，本以为是在浏览器端实现的，自己尝试了一下，经过一番浪费时间的瞎折腾，终于还是失败了<a id="more"></a>，才想到通过服务端返回数据。后来又在某些大佬的博客中找到了他们提供的API，给谷歌浏览器，Typora，博客加上之后看着真是赏心悦目。于是就用了很久。</p>
+       <p>也许你也发现了博客背景是随机变化的了。之前在逛博客的时候，发现有些博客的图片是随机刷新的，本以为是在浏览器端实现的，自己尝试了一下，经过一番浪费时间的瞎折腾，终于还是失败了。</p>
+<a id="more"></a>
+
+<p>后来又在某些大佬的博客中找到了他们提供的API，给谷歌浏览器，Typora，博客加上之后看着真是赏心悦目。于是就用了很久。</p>
 <p><img src="/images/pic/71.jpg" alt></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>终于在前段时间，一直在用的API还是失效了，需要联系<a href="https://acg.blue/" target="_blank" rel="noopener">大佬</a>加入白名单。换上备用的API😂后，意识到白嫖终究不是长久之计，决定自给自足。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>既然是服务端程序，自然就需要一个服务器，所幸之前参加了阿里云的活动，有一台服务器留着一直没用，这次就拿来用一下。即使没有服务器，用阿里云提供的函数计算服务也是可以的，根据这个程序实际上的请求量来看，一个月一块钱不到吧。其次我们需要的就是图片了，可以把图片放在图床，一开始我是把图片都放在服务器里的一个目录下，后来发现访问速度太慢了，就直接把图片存放在博客仓库的目录下，然后通过码云提供的 API 获取仓库数据。</p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这个程序主要是通过监听端口，得到请求地址后，获取图片列表，随机返回一张图片。我们可以通过返回图片所在的路径地址来减小发送的数据，降低服务器压力，提高效率，由于我们获取的图片是用来做背景图片的，所以更好的办法是直接重定向到图片地址，无需返回图片路径。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>在前段时间，一直在用的API还是失效了，需要联系<a href="https://acg.blue/" target="_blank" rel="noopener">大佬</a>加入白名单。换上备用的API😂后，意识到白嫖终究不是长久之计，决定自给自足。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>既然是服务端程序，自然就需要一个服务器，所幸之前参加了阿里云的活动，有一台服务器留着一直没用，这次就拿来用一下。即使没有服务器，用阿里云提供的函数计算服务也是可以的，根据这个程序实际上的请求量来看，一个月一块钱不到吧。</p>
+<p>其次我们需要的就是图片了，可以把图片放在图床，一开始我是把图片都放在服务器里的一个目录下，后来发现访问速度太慢了，就直接把图片存放在博客仓库的目录下，然后通过码云提供的 API 获取仓库数据。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这个程序主要是通过监听端口，得到请求地址后，获取图片列表，随机返回一张图片。我们可以通过返回图片所在的路径地址来减小发送的数据，降低服务器压力，提高效率。由于我们获取的图片是用来做背景图片的，所以更好的办法是直接重定向到图片地址，无需返回图片路径。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="1-读取目录获取图片"><a href="#1-读取目录获取图片" class="headerlink" title="1.读取目录获取图片"></a>1.读取目录获取图片</h4><p><code>fs.readdir(path[, options], callback)</code> ，该方法可以异步的读取目录的内容，回调函数接收 (err,files) 两个参数。<code>options</code> 可以指定 <code>encoding</code> 编码，默认 <code>utf8</code> 。通过这个方法，我们就可以得到所有的图片的名字。</p>
-<h4 id="2-码云API获取图片"><a href="#2-码云API获取图片" class="headerlink" title="2.码云API获取图片"></a>2.码云API获取图片</h4><p>实际上我是通过这种方法来获取图片的，无论是使用图床还是码云仓库，都是为了减轻个人服务器的压力，对我而言，实际是网速太慢╮(╯-╰)╭。但是图片的目录必须放在博客的分支下，这样才能够通过博客地址加相对路径访问到图片</p>
-<p>在<a href="https://gitee.com/api/v5/swagger#/getV5ReposOwnerRepoStargazers?ex=no" target="_blank" rel="noopener">码云API</a>中，<code>仓库</code> 下有 <code>获取仓库具体路径下的内容</code> 这个API，使用前我们需要获取 <code>AccessToken</code> ，但是只有一天有效期，需要通过回调函数重新获取，具体的可以看文档。这种方法如此麻烦，主要是用于第三方应用的。在个人账号的 <code>设置</code> 中可以发现一个 <code>私人令牌</code> 的选项，我们可以申请一个新令牌，设置好权限，最终就会生成一个 <code>Token</code> ，这种方法更适用于个人开发。 <em><code>API格式：(https://gitee.com/api/v5/repos/{仓库所属空间地址}/{repoName}/contents/{dirPath}?access_token={Token}&amp;ref={?branchName})</code></em> 。通过 <code>http.request</code> GET请求后会返回一系列字段， <code>path</code> 才是我们需要的图片相对仓库的路径。如果存放的图片很多，就需要进行字符拼接了(否则数据显示不全)。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> req = https.request(url, res =&gt; &#123;</span><br><span class="line">  res.setEncoding(<span class="string">"utf8"</span>);</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">""</span>;</span><br><span class="line">  res.on(<span class="string">"data"</span>, d =&gt; &#123;</span><br><span class="line">    data += d; <span class="comment">// 进行数据拼接</span></span><br><span class="line">  &#125;);</span><br><span class="line">  res.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">req.on(<span class="string">"error"</span>, e =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(e);</span><br><span class="line">&#125;);</span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure>
+<h4 id="2-码云API获取图片"><a href="#2-码云API获取图片" class="headerlink" title="2.码云API获取图片"></a>2.码云API获取图片</h4><p>实际上我是通过这种方法来获取图片的，无论是使用图床还是码云仓库，都是为了减轻个人服务器的压力，<del>主要是带宽不够╮(╯-╰)╭</del>。但是图片的目录必须放在博客的分支下，这样才能够通过博客地址加相对路径访问到图片。</p>
+<p>在<a href="https://gitee.com/api/v5/swagger#/getV5ReposOwnerRepoStargazers?ex=no" target="_blank" rel="noopener">码云API</a>中，<code>仓库</code> 下有 <code>获取仓库具体路径下的内容</code> 这个API，使用前我们需要获取 <code>AccessToken</code> ，但是只有一天有效期，需要通过回调函数重新获取，具体的可以看文档。这种方法如此麻烦，主要是用于第三方应用的。在个人账号的 <code>设置</code> 中可以发现一个 <code>私人令牌</code> 的选项，我们可以申请一个新令牌，设置好权限，最终就会生成一个 <code>Token</code> ，这种方法更适用于个人开发。</p>
+<p> <em><code>API格式：(https://gitee.com/api/v5/repos/{仓库所属空间地址}/{repoName}/contents/{dirPath}?access_token={Token}&amp;ref={?branchName})</code></em> 。</p>
+<p>通过 <code>http.request</code> GET请求后会返回一系列字段， <code>path</code> 才是我们需要的图片相对仓库的路径。如果存放的图片很多，就需要进行字符拼接了(否则数据显示不全)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> req =	https.request(url, res =&gt; &#123;</span><br><span class="line">  res.setEncoding(<span class="string">"utf8"</span>); </span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">""</span>;</span><br><span class="line">	res.on(<span class="string">"data"</span>, d =&gt; &#123;</span><br><span class="line">    data += d; <span class="comment">// 进行数据拼接</span></span><br><span class="line">  &#125;);</span><br><span class="line">  res.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);       </span><br><span class="line">req.on(<span class="string">"error"</span>, e =&gt; &#123;       </span><br><span class="line">  <span class="built_in">console</span>.error(e);     </span><br><span class="line">&#125;);    </span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-重定向"><a href="#3-重定向" class="headerlink" title="3.重定向"></a>3.重定向</h4><p>最后我们只需要将博客地址拼接上获取的随机图片的相对路径，这就是重定向后的URL地址。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.writeHead(<span class="number">302</span>, &#123;</span><br><span class="line">  Location: <span class="string">"https://yourblog.gitee.io/"</span> + &#123;imgPath&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.writeHead(<span class="number">302</span>, &#123;</span><br><span class="line">  Location: <span class="string">"https://yourblog.gitee.io/"</span> + imgPath</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-优化"><a href="#4-优化" class="headerlink" title="4.优化"></a>4.优化</h4><p>为了提高效率，减少请求API的次数，我们可以将码云返回的数据存到一个全局数组中，每次直接从数组中获取图片路径。隔一段时间再去更新。</p>
-<p>代码地址：<a href="https://gitee.com/Tonyteachers/randomPic" target="_blank" rel="noopener">https://gitee.com/Tonyteachers/randomPic</a></p>
+<h4 id="4-优化"><a href="#4-优化" class="headerlink" title="4.优化"></a>4.优化</h4><p>为了提高效率，减少请求API的次数，我们可以将码云返回的数据存到一个全局数组中，每次直接从数组中获取图片路径。隔一段时间再去更新。代码地址：<a href="https://gitee.com/Tonyteachers/randomPic" target="_blank" rel="noopener">https://gitee.com/Tonyteachers/randomPic</a></p>
  
     </div>
     <footer class="article-footer">
        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二次元/">二次元</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" rel="tag">二次元</a></li></ul>
  
     </footer>
   </div>
    
 <nav id="article-nav">
   
-  <a href="/2020-03-01/关于一段ES6代码的探讨/" id="article-nav-older" class="article-nav-link-wrap">
+  <a href="/2020-03-23/%E4%B8%AA%E4%BA%BAblog%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
     <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">关于一段ES6代码的探讨</div>
+    <div class="article-nav-title">个人blog搭建</div>
   </a>
   
   
-  <a href="/2020-04-12/Termux初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+  <a href="/2020-04-12/Termux%E5%88%9D%E4%BD%93%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
     <strong class="article-nav-caption">下一篇</strong>
     <div class="article-nav-title">
       
@@ -199,13 +223,20 @@
         <aside id="sidebar" class="hidden-xs wow bounceInRight">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%93%E9%AA%8C/">体验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%BF%97/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9E%8E%E6%90%9E/">瞎搞</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9E%8E%E6%90%9E/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/%E7%9E%8E%E6%90%9E/">瞎搞</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二次元/">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序/">程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/" rel="tag">electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spider/" rel="tag">spider</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wifi/" rel="tag">wifi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" rel="tag">二次元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag">博客管理工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/" rel="tag">安卓软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%90%86%E8%AE%BA/" rel="tag">理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/" rel="tag">疫情地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/" rel="tag">评论插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
     </div>
   </div>
 
@@ -215,7 +246,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li></ul>
     </div>
   </div>
 
@@ -228,23 +259,23 @@
       <ul>
         
           <li>
+            <a href="/2021-04-12/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/">新的文章</a>
+          </li>
+        
+          <li>
             <a href="/2020-09-08/SakuHx/">SakuHx</a>
           </li>
         
           <li>
-            <a href="/2020-06-12/Flutter配置与HelloWorld/">Flutter 配置与HelloWorld</a>
+            <a href="/2020-06-12/Flutter%E9%85%8D%E7%BD%AE%E4%B8%8EHelloWorld/">Flutter配置与HelloWorld</a>
           </li>
         
           <li>
-            <a href="/2020-04-12/Termux初体验/">Termux初体验</a>
+            <a href="/2020-04-12/Termux%E5%88%9D%E4%BD%93%E9%AA%8C/">Termux初体验</a>
           </li>
         
           <li>
-            <a href="/2020-03-29/随机图片/">要来一张图片嘛？</a>
-          </li>
-        
-          <li>
-            <a href="/2020-03-01/关于一段ES6代码的探讨/">关于一段ES6代码的探讨</a>
+            <a href="/2020-03-29/%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87/">要来一张图片嘛？</a>
           </li>
         
       </ul>
@@ -259,7 +290,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 Sakura Sun<br>
+      &copy; 2021 Sakura Sun<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -276,9 +307,15 @@
     
     <div id="not-mobile">
       <div class="live2d hidden-xs hidden-sm">
-        <link rel="stylesheet" href="/js/live2d/waifu.css">
-        <script src="/js/live2d/live2d.js"></script>
-        <script src="/js/live2d/waifu-tips.js"></script>
+        
+<link rel="stylesheet" href="/js/live2d/waifu.css">
+
+        
+<script src="/js/live2d/live2d.js"></script>
+
+        
+<script src="/js/live2d/waifu-tips.js"></script>
+
         <!-- // live2d -->
         <div class="waifu">
           <div class="waifu-tips"></div>
@@ -309,13 +346,21 @@
         </div>
     </div>
   </div>
-  <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
-  <script src="/js/style.js"></script>
+  
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+
+  
+<script src="/js/style.js"></script>
+
   <script type="text/javascript">
     // 等待所有加载
-    $(document).ready(function () {
+    $(document).on("DOMContentLoaded" ,function () {
       $('body').addClass('loaded');
       $('#loader-wrapper .load_title').remove();
       setTimeout(() => {
