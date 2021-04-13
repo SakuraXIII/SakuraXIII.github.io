@@ -125,123 +125,42 @@
 </header>
       <div class="outer">
         <section id="main">
-          <article
-  id="post-关于项目的开发流程"
-  class="wow bounceInLeft article article-type-post"
-  itemscope
-  itemprop="blogPost"
->
-  <div class="article-meta">
-    <a href="/2019-08-31/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time datetime="2019-08-31T10:11:18.000Z" itemprop="datePublished">2019-08-31</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>►<a class="article-category-link" href="/categories/%E6%97%A5%E5%BF%97/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
+          
 
+
+
+
+
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2021" class="archive-year">2021</a>
   </div>
-  <div class="article-inner">
-     
-    <header class="article-header">
+  <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021-04-13/TEST/" class="archive-article-date">
+  <time datetime="2021-04-13T14:22:34.774Z" itemprop="datePublished">4月 13</time>
+</a>
       
   
-    <h1 class="article-title" itemprop="name">
-      关于项目的开发流程
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021-04-13/TEST/">TEST</a>
     </h1>
   
- 
-      <div class="subtitle">
-        <p>字数：<span>你猜~(￣▽￣)~*</span>字</p>
-      </div>
-      <script>
-        $(function() {
-          var total = document.querySelector(".article-entry").innerText.length;
-          document.querySelector(".subtitle p span").innerText = total;
-        });
-      </script>
-      
+
     </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <p>11天的时间，终于，接触的第一个项目完成了，虽然是很简单的网站重写，但是也一下子学到了很多的东西。一开始的只知道需要写页面，现在了解了前后分离式项目模式中前端需要完成的一些任务。这里记录一下完成这个项目后所了解到的东西。</p>
-<a id="more"></a>
-
-<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>一个项目的开始，首先应该是前后端人员分析项目需要实现的功能，通过协商交流以确定接口的功能及请求参数，返回数据等其他问题。就我这次所完成的项目的情况而言，只是进行翻新，使用bootstrap+art-template。所以难度上来说不高。</p>
-<p>最开始不知道需要分析页面结构及功能，和后台人员协商决定字段名称，写接口API文档。后来学长来接手后台的实现，让我们写接口文档，这才了解到这个问题。后面又因为经验不足，写的文档问题多多，不得以让学长再重新改，浪费了很多时间。熟悉了之后基本上就没有问题了。不得不说，学长还是太强了。</p>
-<h4 id="施工"><a href="#施工" class="headerlink" title="施工"></a>施工</h4><p>在后台实现逻辑功能的时候，前端则负责编写页面，不得不说使用框架效率真的高。接口完成后，测试接口（我们使用JEECG后台管理，Swagger UI作为接口文档测试页面），将返回的数据归纳整理，对每个接口需要的各种参数有所了解，方便后期使用接口。</p>
-<p>就前端而言，开发过程中一般都有一个作为公共方法的<code>common.js</code> 文件，存储复用性较高的封装好了的方法，为团队人员提供便利，缩短开发时间。在静态页面完成，接口API完成之后，就可以开始使用模板引擎将静态页面处理成动态加载数据的动态页面了。</p>
-<h4 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h4><p>在项目最后完成的时候，一定要将每一个接口测试一遍，就在完工的最后一天晚上，检查完毕，全都没有问题，电脑关机！！当部署到服务器上，一打开：</p>
-<ul>
-<li><p>学长：嗯？？？这个轮播图怎么点的没有用？？？</p>
-</li>
-<li><p>我：我看看。。。忘了，我忘记轮播图上还有个接口。。。</p>
-</li>
-</ul>
-<p>于是，开电脑，解决问题，重新部署…</p>
-<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>在这个项目中，遇到的各种问题，着实让我感觉实战的重要：</p>
-<ul>
-<li>第一个问题：关于列表实现分页的问题。<br>最开始不了解接口返回的数据格式，以为一次返回所有数据，就在考虑怎样通过返回的数据进行计算，得到总页数，并实现点击指定页数切换到相应页面，在控制台输出了无数次错误后，终于完成了分页。</li>
-</ul>
-<p>后来学长直接告诉我，后台会返回对应的页数及数据量，根本就不需要我来考虑这个问题，而且一次把所有数据返回，浏览器可能会直接崩溃，不现实。。。</p>
-<ul>
-<li>第二个问题：如何通过链接跳转将作为参数的id值传到另一个页面</li>
-</ul>
-<p>这个问题很快就想到解决办法了，因为发现网站上点击某个目标都会在地址栏里添加许多字符且都带有 <code>?</code> ，不难推测出就是通过在跳转的地址后附带上<code>?id=xxx</code> 就行了，最后也确实实现了跳转。</p>
-<p>然后跳转之后的页面内容无法加载出来，且控制台输出错误，一直没有查出问题，最后向学长请教才知道附带参数的 <code>?</code> 与前面指定跳转的页面的字符之间被我用 <code>/</code> 分隔开了。也就是 <code>/index.html?id=xxx</code> 被我写成 <code>/index.html/?id=xxx</code> </p>
-<ul>
-<li>最后一个问题：这是我遇到的最为困难的一个问题： <code>路径导航</code> 。</li>
-</ul>
-<p>在原网站中是有这个功能的，且能够在通过从地址栏中直接输入任意一级的网址直接跳转的情况下，仍然加载出正确的路径。我在网上查了很久都没有找到能够实现这一功能的案例，甚至认为是早已在源码中给每一级固定写好了的（后来通过在实际开发中使用接口异步请求的情况来看应该是不可能的）。</p>
-<p>Bootstrap虽然提供了路径导航的组件，然而是静态的，最后无奈只有放弃。然而在最后在项目准备完工打包放在服务器上时，学长又提出了这个需求，因为通过异步请求多次刷新后，若想返回只能通过浏览器的后退按钮实现，这不够人性化。没有办法，我只能尝试一下一开始设想的通过存储在sessionStorage实现保存信息的方法： </p>
-<ul>
-<li>首先获取到跳转的对象的所需要的相关信息：name id </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.sessionStorage.setItem(<span class="string">'key'</span>,<span class="built_in">JSON</span>.stringify(</span><br><span class="line">&#123; <span class="attr">http</span> : id, <span class="attr">name</span> : name &#125;</span><br><span class="line">)) </span><br><span class="line"><span class="comment">//session不支持对象格式，只支持JSON格式 </span></span><br><span class="line"><span class="comment">//以对象的形式并转换成JSON字符串保存在浏览器session中</span></span><br></pre></td></tr></table></figure>
-
-<p>这里可以将键key设定的特殊一点，方便读取 - 跳转到新页面后，通过循环读取所有session中的值，写入指定位置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> len = <span class="built_in">window</span>.sessionStorage.length</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key = <span class="number">0</span>; key&lt;len; i++) &#123;</span><br><span class="line"><span class="keyword">var</span> val = <span class="built_in">window</span>.sessionStorage.getItem(key)</span><br><span class="line"><span class="comment">//通过key键获取对应值 val = JSON.parse(val) //将JSON字符格式转换为对象 // 再将val.http,val.name 分别作为链接参数，链接名写入对应位置 &#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>最后还要考虑路径导航生成后，点击路径导航中的某一级跳转到指定位置后，要将其后的路径全部删除，即删除对应session键值对 </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#navigation a'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> item = $(<span class="string">'#navigation a'</span>).index(<span class="keyword">this</span>); <span class="comment">//获取点击目标在路径中相对索引值 </span></span><br><span class="line">  <span class="keyword">for</span> (; item &lt; len; item++) &#123; <span class="comment">//将索引值对应的键key 删除，我这里设定刚好是对应路径顺序 </span></span><br><span class="line">    <span class="built_in">window</span>.sessionStorage.removeItem(item + <span class="number">1</span>) </span><br><span class="line">  &#125; </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-<p>以上就是实现动态加载路径导航的方法，经过测试，一般情况下，还是没有问题的，但是如果从地址栏输入中间的某一级的地址直接进入，仍然不行。所以严格来说，这个功能还是没有实现。我还没有发现能让其自行得到页面层次结构的方法。</p>
- 
-    </div>
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
- 
-    </footer>
   </div>
-   
-<nav id="article-nav">
-  
-  <a href="/2019-08-03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%88%9D%E6%AD%A5%E5%AE%8C%E6%88%90%E5%95%A6/" id="article-nav-older" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">博客搭建初步完成</div>
-  </a>
-  
-  
-  <a href="/2019-09-19/Gridea%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
-    <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">
-      
-      Gridea客户端管理博客
-      
-    </div>
-  </a>
-  
-</nav>
- 
 </article>
+    
+    
+  </div>
+</section>
 
 
 
-          
-          <div id="lv-container" class="commentModel" data-id="city" data-uid="MTAyMC80ODM2Ni8yNDg2MA=="></div>
           
         </section>
         
