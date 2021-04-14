@@ -1,0 +1,83 @@
+<!--//头部展示-->
+<header>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div class="load_title">正在加载二刺螈站点<br><span>V2.1</span></div>
+  </div>
+  <!--页面背景图-->
+  <div class="theme-bg"></div>
+  <!--导航栏-->
+  <div class="hidden-bar">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="logo">
+            <a class="navbar-brand" href="#"><img src="/images/favicon.png"></a>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%- link_to(theme.menu.Home, '首页', {class: 'iconfont iconhome'}) %></li>
+            <li><%- link_to(theme.menu.Archives, '归档', {class: 'iconfont iconbook'}) %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right hidden-xs">
+            <li><a id="times" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!--//标题-->
+  <div class="top-banner">
+    <!--//超大屏下显示-->
+    <div class="hidden-xs hidden-sm  hidden-md">
+      <img src="/images/2233-bask.jpg" style="width: 100%;">
+      <div class="ban-title">
+        <a class="portrait" href="<%- theme.menu.Home %>">
+          <img src="/images/2233&cat.jpg" class="wow slideInDown">
+        </a>
+        <div class="wow fadeInUp">
+          <h1>er 刺螈</h1>
+          <p>Welcome to my personal site</p>
+        </div>
+        <a href="https://github.com/SakuraXIII/SakuraXIII.github.io" title="Github Pages"
+          class="iconfont icongithub"></a>
+        <a href="https://www.zhihu.com/people/an-ye-yong-heng-45/activities" title="玩知乎嘛"
+          class="iconfont iconzhihu1"></a>
+        <div class="hitokoto-text  wow flipInX">
+          <p class="hitokoto"></p><strong></strong>
+        </div>
+      </div>
+    </div>
+    <!--//中屏-->
+    <div class="hidden-lg hidden-xs md img">
+      <div class="ban-title mdtitle">
+        <h1>er刺螈</h1>
+        <p>Welcome to my personal site</p>
+        <a href="https://github.com/SakuraXIII/SakuraXIII.github.io" class="iconfont icongithub"></a>
+        <a href="https://www.zhihu.com/people/an-ye-yong-heng-45/activities" class="iconfont iconzhihu1"></a>
+        <div class="hitokoto-text">
+          <p class="hitokoto"></p><strong></strong>
+        </div>
+      </div>
+    </div>
+    <!--手机上只显示图片，不显示文字-->
+    <div class="hidden-lg hidden-md hidden-sm other img">
+      <div class="ban-title othertitle">
+        <h1>er刺螈</h1>
+        <p>Welcome to my personal site</p>
+      </div>
+
+    </div>
+  </div>
+</header>

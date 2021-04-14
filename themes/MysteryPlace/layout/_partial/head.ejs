@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <%
+  var title = page.title ? page.title : "ヽ(≧∀≦)ﾉ";
+  if (is_archive()){
+    title = __('archive_a');
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('category') + ': ' + page.category;
+  } else if (is_tag()){
+    title = __('tag') + ': ' + page.tag;
+  }
+  %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title><%- theme.title %> ~ <%- title %></title>
+  <% if (theme.favicon){ %>
+  <%- favicon_tag(theme.favicon) %> <% } %>
+  <%- css('//at.alicdn.com/t/font_1317659_h0wqv51g24j.css') %>
+  <%- css('/css/loader.css') %>
+  <%- css('/css/global.css') %>
+  <%- css('/css/drawer.css') %>
+  <%- css('/css/main.css') %>
+  <%- css('/css/post_list.css') %>
+  <!-- <%- css('css/myCss.css') %> -->
+</head>

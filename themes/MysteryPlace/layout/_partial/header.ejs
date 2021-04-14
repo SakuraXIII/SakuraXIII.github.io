@@ -1,0 +1,14 @@
+<!--//头部展示-->
+<header class="light hidden-xs-md">
+  <!--导航栏-->
+  <div class="my-container nav-bar">
+    <div class="pc-navbar">
+      <ul class="headTitle">
+        <li><%- link_to(theme.menu.Home, "Sakura's Blog",{style: 'font-weight:bold;'}) %></li>
+        <li><%- link_to(theme.menu.Home, '首页', {class: 'iconfont iconhome'}) %></li>
+        <li><%- link_to(theme.menu.Archives, '归档', {class: 'iconfont iconbook'}) %></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<%- partial('_widget/site_intro', null, {cache: !config.relative_link}) %>

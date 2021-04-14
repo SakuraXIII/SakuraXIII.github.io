@@ -1,0 +1,45 @@
+<%- partial('_partial/head') %>
+<body>
+  <div id="app">
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+      <div class="load_title">正在加载<%- theme.title %><br><span>V2.1</span></div>
+    </div>
+    <!--页面背景图-->
+    <div class="theme-bg"></div>
+
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/main', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/mobile_nav', null, {class:'mobile-drawer',cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
+    <div id="not-mobile">
+      <%- partial('_widget/live2d',null,{cache:!config.relative_link}) %>
+      <%- partial('_widget/player',null,{cache:!config.relative_link}) %>
+    </div>
+  </div>
+  <%- js('https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js') %>
+  <!-- <%- js('https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js') %> -->
+  <%- js('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js') %>
+  <!-- <%- js('https://cdn.bootcss.com/wow/1.1.2/wow.min.js') %> -->
+  <%- js('/js/style') %>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',()=>{
+      $('body').addClass('loaded');
+          $('#loader-wrapper .load_title').remove();
+          setTimeout(() => {
+            $('#loader-wrapper').remove();
+          }, 2000)
+    });
+  </script>
+  <script src="/js/live2d/live2d.js"></script>
+  <script src="/js/live2d/waifu-tips.js"></script>
+  <script type="text/javascript">
+    live2d_settings['modelId'] = 3;
+    live2d_settings['modelTexturesId'] = 87;
+    initModel("/js/live2d/waifu-tips.json")
+  </script>
+</body>
+
+</html>

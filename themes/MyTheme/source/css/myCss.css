@@ -1,0 +1,117 @@
+@media screen and (min-width: 768px) {
+  #main {
+    width: 70.3333%;
+  }
+
+  .top-banner .mdtitle h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-banner .ban-title {
+    width: 100%;
+  }
+}
+
+/* 文章中的引用 */
+.article-entry blockquote {
+  position: relative;
+  padding: 10px 2%;
+  background-color: #17d8bd;
+  margin: 0;
+  text-align: unset;
+  padding: 10px 5px;
+}
+
+.article-entry blockquote p {
+  font-size: 14px;
+  margin: 0.8em 0;
+}
+blockquote::before {
+  content: "";
+  position: absolute;
+  width: 1%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #baceca;
+}
+/* 侧边栏 */
+#sidebar {
+  float: right;
+}
+.widget a {
+  color: #454166;
+}
+
+.widget {
+  text-shadow: unset;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+.widget-wrap ul li {
+  transition: all 500ms linear;
+}
+
+.widget-wrap ul li:hover {
+  padding-left: 10px;
+}
+
+.widget a:hover {
+  text-decoration: none;
+}
+
+/* //播放器 */
+.aplayer.aplayer-fixed,
+.aplayer.aplayer-fixed .aplayer-body {
+  bottom: 50% !important;
+}
+
+/* 文章中的列表(代码块) */
+.article-entry ul, .article-entry ol, .article-entry dl{
+  margin: 0;
+}
+
+.article-entry ul li {
+  margin-left: 2em;
+}
+
+.article-entry ul li p {
+  text-indent: unset;
+}
+
+/* 来必力评论 */
+.commentModel {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+}
+
+/* 文章中的图片 */
+.article-entry > p > img {
+  transition: all 600ms ease;
+}
+
+.article-entry > p > img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px 0 #366abe;
+}
+
+/* 文章背景 */
+.article-inner {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+/* 文章摘要的阅读更多 */
+.article-entry .article-more-link {
+  margin: 1em 0;
+  text-align: right;
+}
+
+/* 文章标题下的子标题 */
+.article-header .subtitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+    font-family: cursive;
+}

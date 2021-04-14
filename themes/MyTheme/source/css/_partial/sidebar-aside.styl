@@ -1,0 +1,30 @@
+#sidebar
+  @media mq-normal
+    column(sidebar-column)
+    position: sticky
+    position: -webkit-sticky
+    top: 30px
+
+.widget-wrap
+  margin: 30px 0
+
+.widget-title
+  @extend $block-caption
+
+.widget
+  color: color-sidebar-text
+  text-shadow: 0 1px #fff
+  background: color-widget-background
+  box-shadow: 0 -1px 4px color-widget-border inset
+  border: 1px solid color-widget-border
+  padding: 15px
+  border-radius: 3px
+  a
+    color: color-link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 15px
+      list-style: disc

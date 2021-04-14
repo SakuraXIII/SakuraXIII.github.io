@@ -1,0 +1,28 @@
+<footer id="footer" class="light">
+  <div class="spacial my-footer">
+    <p>CopyRight &copy; 2020 Sakura's blog</p>
+    <p id="runtime"></p>
+    <p>
+      THEME BY <a href="https://gitee.com/hbbxht/blog-vue" title="Sakura">Sakura</a>&nbsp;MODIFIED
+      BY&nbsp;<a href="https://left.pink/">Left</a>
+    </p>
+  </div>
+  <img src="/images/2233&sleep.png" style="position: fixed; bottom: 0; right: 0; width: 15%" />
+  <script defer>
+    setInterval(() => {
+      let current = new Date().getTime();
+      let start = "2019-07-27 16:54:23"; //2019年07月27日
+      let now = current - new Date(start).getTime(); // 时间差的毫秒数
+      let days = Math.floor(now / (24 * 3600 * 1000));
+      let leave1 = now % (24 * 3600 * 1000);
+      let hours = Math.floor(leave1 / (3600 * 1000));
+      let leave2 = leave1 % (3600 * 1000);
+      let minutes = Math.floor(leave2 / (60 * 1000));
+      let leave3 = leave2 % (60 * 1000);
+      let seconds = Math.round(leave3 / 1000);
+      document.querySelector(
+        "#runtime"
+      ).innerText = `本站已勉强运行${days}天${hours}小时${minutes}分钟${seconds}秒`;
+    }, 1000);
+  </script>
+</footer>

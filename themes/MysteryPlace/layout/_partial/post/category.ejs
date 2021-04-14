@@ -1,0 +1,10 @@
+<% if (post.categories && post.categories.length){ %>
+<div class="article-category <%= class_name %>">
+  <%- list_categories(post.categories, { 
+    show_count: false, 
+    class: 'categories-item',
+    style: 'none',
+    separator: '、' 
+  }) %>
+</div>
+<% } %>

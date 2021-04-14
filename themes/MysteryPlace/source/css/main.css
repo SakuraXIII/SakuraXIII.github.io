@@ -1,0 +1,13 @@
+.main .aside {
+	position: sticky;
+	width: 18vw;
+	top: 15vh;
+	float: left;
+	margin: 0 5vw 0 3vw;
+	border-radius: var(--borRadius);
+	overflow: hidden;
+}
+
+.main .post-list {
+	overflow: hidden;
+}

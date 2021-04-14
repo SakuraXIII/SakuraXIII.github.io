@@ -1,0 +1,38 @@
+*
+  margin: 0
+  padding: 0
+
+body
+  background-color: #f2f3f6
+  font-family: "Microsoft YaHei UI", sans-serif
+  cursor: url("/images/cursor.cur") 0 0, default
+
+a
+  color: #ccc
+  text-decoration: none
+  &:hover, focus
+    color: #bababa
+    text-decoration: none
+    cursor: url("/images/pointer.cur") 0 0, pointer
+
+ul, ol
+  list-style: none
+
+.nav li a
+    &:hover, focus
+      background-color: transparent;
+
+//滚动条整体部分
+::-webkit-scrollbar
+  width: 10px;
+//滚动条内层轨道
+::-webkit-scrollbar-track-piece
+  background-color: #fff;
+//滚动条滑块
+::-webkit-scrollbar-thumb
+  background-color: #5981C6;
+  border-radius: 5px;
+  border 2px solid #fff;
+
+::-webkit-scrollbar-thumb:hover
+  background-color: #E63D5D;  

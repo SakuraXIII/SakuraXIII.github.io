@@ -1,0 +1,205 @@
+:root {
+  --darkPrimary: #353535;
+  --defaultPrimary: 51, 147, 125;
+  --borRadius: 5px;
+}
+
+/*滚动条整体部分*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/*滚动条内层轨道*/
+::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+}
+
+/*滚动条滑块*/
+::-webkit-scrollbar-thumb {
+  /* background-color: #5981c6; */
+  background-color: rgb(var(--defaultPrimary));
+  border-radius: 5px;
+  border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e63d5d;
+}
+
+/*全局样式表*/
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #353535;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: scale(1.05);
+  color: #474646;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+.iconfont::before {
+  margin-right: 3px;
+}
+
+.show {
+  transform-origin: center top;
+  animation: my-scale 0.5s ease;
+  /*transition: all ;*/
+}
+
+.my-container {
+  margin: 0 auto;
+  width: 95vw;
+  transition: width 0.3s ease-in-out;
+}
+
+@keyframes my-scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.dark,
+.dark:hover,
+.dark:focus {
+  color: #a19d9d;
+  border: 1px solid var(--darkPrimary);
+  background-color: var(--darkPrimary);
+  transition: all 0.5s ease-out;
+}
+
+.light,
+.light:hover,
+.light:focus {
+  --ligthbgColor: #ffffff;
+  color: #ccc;
+  border: 1px solid rgb(var(--defaultPrimary));
+  background-color: rgb(var(--defaultPrimary));
+  transition: all 0.5s ease-out;
+}
+
+.theme-bg {
+  background: url("/images/home-bg.jpg") no-repeat center / cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.null {
+  width: 100%;
+  padding-top: 60px;
+}
+
+/* // 超小屏幕xs 手机 (<768px) 小屏幕sm 平板(≥768px) 中等屏幕md  桌面(≥992px) 大屏幕lg  桌面(≥1200px) */
+/*PC端*/
+@media screen and (min-width: 992px) {
+  .hidden-md-lg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .my-container {
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .my-container {
+    width: 80vw;
+  }
+}
+
+/*移动端*/
+@media screen and (max-width: 992px) {
+  .hidden-xs-md {
+    display: none;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headTitle {
+  padding: 0;
+  margin: 0;
+}
+
+.headTitle li {
+  float: left;
+  margin-right: 5px;
+}
+
+.headTitle li a {
+  color: #fff;
+  display: block;
+  padding: 20px 15px;
+}
+
+.headTitle li a:hover {
+  color: #ccc;
+}
+
+.site-intro {
+  margin: 15vh auto 10vh;
+  color: #fff;
+  text-align-last: center;
+}
+
+/* 移动端菜单按钮 */
+.menu {
+  position: fixed;
+  top: 0;
+  color: #fff;
+  font-size: 25px;
+  padding-left: 16px;
+  padding-top: 3vh;
+}
+
+.my-footer {
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: var(--borRadius);
+}
+
+.my-footer:not(.dark) {
+  border: 1px solid rgba(var(--defaultColor));
+  background-color: rgba(var(--defaultColor));
+}
+.my-footer a {
+  border: none;
+  color: #700fc6;
+  background-color: transparent;
+}

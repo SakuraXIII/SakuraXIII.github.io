@@ -1,0 +1,6 @@
+<aside class="aside hidden-xs-md light" style="float: <%- theme.sidebar%>">
+  <%- partial('_widget/recent_posts') %>
+  <% if(is_post()) { %>
+    <%- toc(page.content) %>
+  <% } %>
+</aside>

@@ -1,0 +1,24 @@
+.article-inner {
+  padding: 30px;
+  border-radius: var(--borRadius);
+  margin-bottom: 2vw;
+}
+
+.article-header {
+  text-align: center;
+}
+
+.article-title {
+  font-size: 20px;
+  background-color: unset;
+  display: inline-block;
+	margin: 5px 0;
+	display: block;
+}
+
+.article-subtitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+}

@@ -1,0 +1,5 @@
+<aside id="sidebar" class="hidden-xs wow bounceInRight"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+  <% theme.widgets.forEach(function(widget){ %>
+    <%- partial('_widget/' + widget) %>
+  <% }) %>
+</aside>

@@ -1,0 +1,35 @@
+.shadow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.open .shadow {
+  visibility: visible;
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60vw;
+  z-index: 2;
+  overflow-y: auto;
+  transform: translateX(-60vw);
+}
+
+.drawer h1 {
+  display: block;
+  height: 900px;
+  background-color: #fff;
+}
+
+.open .drawer {
+  left: 0;
+  transform: translateX(0);
+}
