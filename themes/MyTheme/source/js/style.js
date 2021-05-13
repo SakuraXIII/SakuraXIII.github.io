@@ -69,11 +69,17 @@ $(function () {
   }
   let date = (new Date().getMonth() + 1).toString() + "月" + new Date().getDate().toString() + "日";
   console.log(date);
-  if(date === '4月4日') {
-    $('html').css('filter','grayscale(100%)')
-    setTimeout(function(){
-          $('.hitokoto').text('悼念离我们而去的同胞们')
-          $('.hitokoto-text strong').text('-- 博主')
-    },1000)
+  if (date === "4月4日") {
+    $("html").css("filter", "grayscale(100%)");
+    setTimeout(function () {
+      $(".hitokoto").text("悼念离我们而去的同胞们");
+      $(".hitokoto-text strong").text("-- 博主");
+    }, 1000);
   }
+  // $(".theme-bg").attr(
+  //   "background-image",
+  //   `url(https://gitee.com/Tonyteachers/Tonyteachers/raw/source/themes/Images/pic/${
+  //     parseInt(Math.random() * 139 + 1)
+  //   }.png)`
+  // );
 });
